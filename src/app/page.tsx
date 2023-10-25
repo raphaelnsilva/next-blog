@@ -1,4 +1,4 @@
-import './page.module.css';
+import './page.module.css'
 
 export default function Home() {
   return (
@@ -11,5 +11,5 @@ export default function Home() {
         minus ipsam. Quidem et voluptatum mollitia!
       </p>
     </main>
-  );
+  )
 }

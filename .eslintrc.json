@@ -15,7 +15,9 @@
 		"plugin:prettier/recommended",
 		"plugin:@next/next/recommended",
 		"prettier",
-		"next"
+		"next/core-web-vitals",
+		"plugin:testing-library/react",
+		"plugin:jest-dom/recommended"
 	],
 	"overrides": [],
 	"parser": "@typescript-eslint/parser",

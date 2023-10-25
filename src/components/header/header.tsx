@@ -1,19 +1,19 @@
-'use client';
-import { useState } from 'react';
-import { usePathname } from 'next/navigation';
-import styles from './header.module.css';
-import Link from 'next/link';
-import { HiXMark, HiBars3BottomRight } from 'react-icons/hi2';
+'use client'
+import { useState } from 'react'
+import { usePathname } from 'next/navigation'
+import styles from './header.module.css'
+import Link from 'next/link'
+import { HiXMark, HiBars3BottomRight } from 'react-icons/hi2'
 
 export default function Header() {
-  const pathName = usePathname();
+  const pathName = usePathname()
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   return (
     <header className={styles.headerComponent}>
       <nav className={styles.navComponent}>
-        <Link href="/">
+        <Link href='/'>
           <span
             className={styles.brandName}
             onClick={() => (open ? setOpen(!open) : '')}
@@ -21,11 +21,15 @@ export default function Header() {
             MundoDev
           </span>
         </Link>
-        <span className={styles.menuIcons} onClick={() => setOpen(!open)}>
+        <span
+          className={styles.menuIcons}
+          data-testid='menuIcons'
+          onClick={() => setOpen(!open)}
+        >
           {!open ? <HiBars3BottomRight /> : <HiXMark />}
         </span>
         <ul className={styles.navMenu}>
-          <Link href="/">
+          <Link href='/'>
             <li
               className={
                 pathName === '/' ? `${styles.navLinksActive}` : styles.navLinks
@@ -34,7 +38,7 @@ export default function Header() {
               Home
             </li>
           </Link>
-          <Link href="/posts">
+          <Link href='/posts'>
             <li
               className={
                 pathName === '/posts'
@@ -48,8 +52,8 @@ export default function Header() {
         </ul>
       </nav>
       {open && (
-        <ul className={styles.navMenuExpanded}>
-          <Link href="/">
+        <ul className={styles.navMenuExpanded} data-testid='expandedMenu'>
+          <Link href='/'>
             <li
               className={
                 pathName === '/'
@@ -60,7 +64,7 @@ export default function Header() {
               Home
             </li>
           </Link>
-          <Link href="/posts">
+          <Link href='/posts'>
             <li
               className={
                 pathName === '/posts'
@@ -74,5 +78,5 @@ export default function Header() {
         </ul>
       )}
     </header>
-  );
+  )
 }

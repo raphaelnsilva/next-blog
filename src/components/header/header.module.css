@@ -2,8 +2,8 @@
   border-bottom: 2px dashed var(--border);
 }
 
-.headerComponent > a {
-  color: var(--blackColor);
+.headerComponent li {
+  font-size: 18px;
 }
 
 .navComponent {

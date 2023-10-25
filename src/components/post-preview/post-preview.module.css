@@ -1,0 +1,20 @@
+.postsContainer {
+  padding: 20px 0;
+}
+
+.postLink {
+  font-size: 24px;
+  color: var(--blueColor);
+}
+
+.publishData {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-style: italic;
+  color: #0000009f;
+}
+
+.publishData path {
+  color: #0000009f;
+}
