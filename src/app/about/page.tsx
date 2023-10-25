@@ -1,8 +1,15 @@
+'use client';
+
+import styled from 'styled-components';
+
+const Title = styled.h1`
+  color: red;
+`;
+
 export default function About() {
   return (
     <>
-      <h1>ola</h1>
-      <h2>Munto</h2>
+      <Title>Página Sobre</Title>
     </>
   );
 }

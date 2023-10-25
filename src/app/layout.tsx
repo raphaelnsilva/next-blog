@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import './global.css';
+import Header from '@/components/header/header';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,14 +14,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body>
-        <h1>MundoDev</h1>
-        <nav>
-          <ul>
-            <Link href="/">Home</Link>
-            <Link href="/about">Sobre</Link>
-          </ul>
-        </nav>
+      <body suppressHydrationWarning={true}>
+        <Header />
         {children}
       </body>
     </html>

@@ -1,0 +1,83 @@
+.headerComponent {
+  border-bottom: 2px dashed var(--border);
+}
+
+.headerComponent > a {
+  color: var(--blackColor);
+}
+
+.navComponent {
+  height: 80px;
+  max-width: 780px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.brandName {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.menuIcons {
+  cursor: pointer;
+  position: absolute;
+  font-size: 25px;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.navMenu {
+  margin-left: auto;
+  display: flex;
+  padding: 2rem 0;
+}
+
+.navLinks {
+  margin: 0 0 0 30px;
+}
+
+.navLinksActive {
+  border-bottom: 2px dashed var(--blueColor);
+  color: var(--blueColor);
+  margin: 0 0 0 30px;
+}
+
+.navMenuExpanded {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .menuIcons {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .navMenu {
+    display: none;
+  }
+  .navLinks {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .navMenuExpanded {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+  }
+
+  .navMenuExpandedActive {
+    border-bottom: 2px dashed var(--blueColor);
+    color: var(--blueColor);
+  }
+}
