@@ -5,6 +5,33 @@
   --border: #0000002f;
 }
 
+blockquote{
+  font-size: 1.4em;
+  width:60%;
+  margin:50px auto;
+  font-style:italic;
+  color: #555555;
+  padding:1.2em 30px 1.2em 75px;
+  border-left:8px solid #78C0A8 ;
+  line-height:1.6;
+  position: relative;
+  background:#EDEDED;
+}
+
+blockquote::before{
+  font-family:Arial;
+  content: "\201C";
+  color:#78C0A8;
+  font-size:4em;
+  position: absolute;
+  left: 10px;
+  top:-10px;
+}
+
+blockquote::after{
+  content: '';
+}
+
 * {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: var(--blackColor);
@@ -25,12 +52,12 @@ body {
   background-color: var(--backGround);
 }
 
-blockquote {
+/* blockquote {
   background: #f9f9f9;
   border-left: 10px solid #ccc;
   margin: 1.5em 10px;
   padding: 0.5em 10px;
-}
+} */
 
 p {
   font-size: 16px;
@@ -64,8 +91,10 @@ a {
   text-decoration: none;
 }
 
-li {
-  list-style: none;
+code {
+  background-color: #e9e9e9;
+  padding: 5px 30px;
+  border-radius: 4px;
 }
 
 pre {

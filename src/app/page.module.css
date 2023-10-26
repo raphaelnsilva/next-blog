@@ -1,0 +1,36 @@
+.homeContainer {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.homeContainer h1 {
+  font-size: 35px;
+}
+
+.homeContainer p {
+  text-align: center;
+}
+
+.homeIcons {
+  font-size: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.icon1 path {
+  color: #000;
+}
+
+.icon2 {
+  font-size: 30px;
+}
+
+.icon3 path {
+  color: #3178C6;
+}

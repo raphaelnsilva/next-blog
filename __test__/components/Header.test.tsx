@@ -42,4 +42,48 @@ describe('Header Component', () => {
     // verifica se o menu está fechado
     expect(screen.queryByTestId('expandedMenu')).not.toBeInTheDocument()
   })
+
+  it('Deve fechar o menu ao clicar em Home (usando classe)', () => {
+    render(<Header />)
+
+    const menuIcons = screen.getByTestId('menuIcons')
+
+    // Dispara um evento para clicar no ícone e expandir o menu
+    fireEvent.click(menuIcons)
+
+    // Verifica se o menu está expandido
+    const expandedMenu = screen.getByTestId('expandedMenu')
+    expect(expandedMenu).toBeInTheDocument()
+
+    // Encontre o link usando a classe e dispare um evento para clicar nele
+    const homeLink = screen.getByText('Home', { selector: '.navMenuExpanded' })
+    // Substitua 'your-link-class' pela classe real
+
+    fireEvent.click(homeLink)
+
+    // Verifica se o menu está fechado após clicar no link
+    expect(screen.queryByTestId('expandedMenu')).not.toBeInTheDocument()
+  })
+
+  it('Deve fechar o menu ao clicar em Posts (usando classe)', () => {
+    render(<Header />)
+
+    const menuIcons = screen.getByTestId('menuIcons')
+
+    // Dispara um evento para clicar no ícone e expandir o menu
+    fireEvent.click(menuIcons)
+
+    // Verifica se o menu está expandido
+    const expandedMenu = screen.getByTestId('expandedMenu')
+    expect(expandedMenu).toBeInTheDocument()
+
+    // Encontre o link usando a classe e dispare um evento para clicar nele
+    const homeLink = screen.getByText('Posts', { selector: '.navMenuExpanded' })
+    // Substitua 'your-link-class' pela classe real
+
+    fireEvent.click(homeLink)
+
+    // Verifica se o menu está fechado após clicar no link
+    expect(screen.queryByTestId('expandedMenu')).not.toBeInTheDocument()
+  })
 })

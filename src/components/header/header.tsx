@@ -55,6 +55,10 @@ export default function Header() {
         <ul className={styles.navMenuExpanded} data-testid='expandedMenu'>
           <Link href='/'>
             <li
+              onClick={() => {
+                setOpen(!open)
+              }}
+              data-testid='Home'
               className={
                 pathName === '/'
                   ? `${styles.navMenuExpandedActive}`
@@ -66,6 +70,10 @@ export default function Header() {
           </Link>
           <Link href='/posts'>
             <li
+              onClick={() => {
+                setOpen(!open)
+              }}
+              data-testid='Posts'
               className={
                 pathName === '/posts'
                   ? `${styles.navMenuExpandedActive}`

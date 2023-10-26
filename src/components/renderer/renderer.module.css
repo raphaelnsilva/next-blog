@@ -1,0 +1,26 @@
+.postHeader {
+  border-bottom: 2px dashed var(--border);
+  padding: 23px 0;
+}
+
+.postTitle {
+  font-size: 28px;
+  font-weight: 700; 
+}
+
+.postDate {
+  display: flex;
+  gap: 10px;
+  font-style: italic;
+  color: #0000009f;
+  padding-bottom: 10px;
+}
+
+.postDate path {
+  color: #0000009f;
+}
+
+.postDate svg {
+  margin: auto 0;
+  font-size: 19px;
+}

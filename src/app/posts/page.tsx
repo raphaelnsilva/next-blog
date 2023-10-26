@@ -3,6 +3,11 @@ import { performRequest } from '../../lib/datocms'
 import PostPreview from '@/components/post-preview/post-preview'
 import { Article } from '@/interfaces/types'
 import { HOMEPAGE_QUERY } from '@/interfaces/queries'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Blog | MundoDev'
+}
 
 export default async function Posts() {
   const { allArticles } = await performRequest({
