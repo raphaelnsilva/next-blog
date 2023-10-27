@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default async function Posts() {
   const { allArticles } = await performRequest({
     query: HOMEPAGE_QUERY,
-    revalidate: 6000
+    revalidate: 1
   })
 
   return (
