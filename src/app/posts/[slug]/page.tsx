@@ -11,7 +11,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const post = await performRequest({
     query: ARTICLE_QUERY,
     variables: { slug: params.slug },
-    revalidate: false
+    revalidate: 1
   })
   const postData = post.article
 
@@ -25,7 +25,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
 export async function generateStaticParams() {
   const slugQuery = await performRequest({
     query: PATHS_QUERY,
-    revalidate: false
+    revalidate: 1
   })
   return slugQuery.allArticles
 }
