@@ -40,7 +40,7 @@ export default function Footer() {
                 : styles.navLinks
             }
           >
-            Sobre nós
+            Sobre
           </li>
         </Link>
       </ul>

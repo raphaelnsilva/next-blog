@@ -1,7 +1,6 @@
 import styles from './page.module.css'
 import { Metadata } from 'next'
-import { SiNextdotjs, SiTypescript } from 'react-icons/si'
-import { PiPlusThin } from 'react-icons/pi'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Home | MundoDev'
@@ -10,17 +9,17 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className={styles.homeContainer}>
-      <h1>Olá Mundo!</h1>
-      <p>
-        Projeto desenvolvido inteiramente com <br />
-        Next.js, TypeScript com padronizador <br />
-        de código e testes automatizados
-      </p>
-      <div className={styles.homeIcons}>
-        <SiNextdotjs className={styles.icon1} />
-        <PiPlusThin className={styles.icon2} />
-        <SiTypescript className={styles.icon3} />
-      </div>
+      <h1>
+        Tudo sobre tecnologia <br /> em um só lugar
+      </h1>
+      <ul className={styles.linksList}>
+        <Link href='/posts' className={styles.postLink}>
+          Últimos Posts
+        </Link>
+        <Link href='/about' className={styles.aboutLink}>
+          Sobre nós
+        </Link>
+      </ul>
     </main>
   )
 }

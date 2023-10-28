@@ -57,7 +57,7 @@ export default function Header() {
                   : styles.navLinks
               }
             >
-              Sobre nós
+              Sobre
             </li>
           </Link>
         </ul>
@@ -84,7 +84,6 @@ export default function Header() {
               onClick={() => {
                 setOpen(!open)
               }}
-              data-testid='Posts'
               className={
                 pathName === '/posts'
                   ? `${styles.navMenuExpandedActive}`
@@ -99,14 +98,14 @@ export default function Header() {
               onClick={() => {
                 setOpen(!open)
               }}
-              data-testid='About'
+              data-testid='A'
               className={
                 pathName === '/about'
                   ? `${styles.navMenuExpandedActive}`
                   : styles.navMenuExpanded
               }
             >
-              Sobre nós
+              Sobre
             </li>
           </Link>
         </ul>

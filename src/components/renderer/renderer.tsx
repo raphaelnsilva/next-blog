@@ -34,7 +34,6 @@ export default function Renderer({ post }: PostTypes) {
         data={post.content}
         renderBlock={(context) => {
           const imageRecord = context.record.image as RecordType
-          console.log(imageRecord)
           // eslint-disable-next-line jsx-a11y/alt-text
           return <Image data={imageRecord.responsiveImage} />
         }}

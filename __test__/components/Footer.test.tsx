@@ -5,13 +5,9 @@ describe('Footer component', () => {
   it('Deve renderizar o componente Footer corretamente', () => {
     render(<Footer />)
 
-    // Verifica se o texto de direitos autorais está presente no componente
-    const copyrightText = screen.getByText('Todos os diretor reservados ©')
-    const homeLink = screen.getByText('Home')
-    const postsLink = screen.getByText('Posts')
-
-    expect(copyrightText).toBeInTheDocument()
-    expect(homeLink).toBeInTheDocument()
-    expect(postsLink).toBeInTheDocument()
+    // eslint-disable-next-line prettier/prettier
+    expect(screen.getByText('Todos os diretor reservados ©')).toBeInTheDocument()
+    expect(screen.getByText('Home')).toBeInTheDocument()
+    expect(screen.getByText('Posts')).toBeInTheDocument()
   })
 })

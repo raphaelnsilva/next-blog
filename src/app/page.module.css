@@ -3,34 +3,35 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 30px;
 }
 
 .homeContainer h1 {
-  font-size: 35px;
-}
-
-.homeContainer p {
   text-align: center;
+  padding: 10px;
+  font-size: 42px;
+  background: linear-gradient(to right, #9b9b9b, #282728);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.homeIcons {
-  font-size: 70px;
+.linksList {
   display: flex;
-  align-items: center;
   justify-content: center;
+  padding: 0;
   gap: 20px;
 }
 
-.icon1 path {
-  color: #000;
+.postLink {
+  background-color: var(--backGround);
+  border: 1px solid var(--blackColor);
+  padding: 10px;
+  border-radius: 8px;
+  color: var(--blackColor);
 }
 
-.icon2 {
-  font-size: 30px;
-}
-
-.icon3 path {
-  color: #3178C6;
+.aboutLink {
+  background-color: var(--blackColor);
+  padding: 10px;
+  border-radius: 8px;
+  color: var(--backGround);
 }
