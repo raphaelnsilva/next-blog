@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className={styles.homeContainer}>
-      <h1>Olá Mundo! </h1>
+      <h1>Olá Mundo!</h1>
       <p>
         Projeto desenvolvido inteiramente com <br />
-        Next.js e TypeScript com padronizador <br />
+        Next.js, TypeScript com padronizador <br />
         de código e testes automatizados
       </p>
       <div className={styles.homeIcons}>
