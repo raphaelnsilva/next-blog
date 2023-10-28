@@ -67,9 +67,7 @@ mark {
   background-color: #60E097;
 }
 
-article {
-  border-bottom: 2px dashed var(--border);
-}
+
 
 .active {
   a {
@@ -102,5 +100,5 @@ pre {
 }
 
 img {
-  border-radius: 5px;
+  border-radius: 3px;
 }

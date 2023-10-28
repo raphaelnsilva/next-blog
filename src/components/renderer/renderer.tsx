@@ -1,13 +1,13 @@
 'use client'
-import { FaRegCalendarAlt } from 'react-icons/fa'
-import { PiUserCircleGearBold } from 'react-icons/pi'
-import { Image, StructuredText } from 'react-datocms'
+import styles from './renderer.module.css'
+import { useEffect } from 'react'
 import { RecordType } from '../../interfaces/types'
 import { PostTypes } from '../../interfaces/types'
+import { Image, StructuredText } from 'react-datocms'
+import { PiUserCircleGearBold } from 'react-icons/pi'
+import { FaRegCalendarAlt } from 'react-icons/fa'
 import Prism from 'prismjs'
 import 'prismjs/themes/prism.css'
-import { useEffect } from 'react'
-import styles from './renderer.module.css'
 
 export default function Renderer({ post }: PostTypes) {
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function Renderer({ post }: PostTypes) {
   }, [post])
 
   return (
-    <main>
+    <main className={styles.postContent}>
       <header className={styles.postHeader}>
         <h1 className={styles.postTitle}>{post.title}</h1>
         <p className={styles.postDate}>
@@ -34,6 +34,7 @@ export default function Renderer({ post }: PostTypes) {
         data={post.content}
         renderBlock={(context) => {
           const imageRecord = context.record.image as RecordType
+          console.log(imageRecord)
           // eslint-disable-next-line jsx-a11y/alt-text
           return <Image data={imageRecord.responsiveImage} />
         }}

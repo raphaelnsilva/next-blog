@@ -1,4 +1,5 @@
 .postsContainer {
+  border-bottom: 2px dashed var(--border);
   padding: 20px 0;
 }
 

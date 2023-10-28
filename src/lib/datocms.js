@@ -1,20 +1,25 @@
 import { cache } from 'react'
 
 const dedupedFetch = cache(async (serializedInit) => {
-  const response = await fetch(
-    'https://graphql.datocms.com/',
-    JSON.parse(serializedInit)
-  )
-  const responseBody = await response.json()
-  if (!response.ok) {
-    throw new Error(
-      `${response.status} ${response.statusText}: ${JSON.stringify(
-        responseBody
-      )}`
+  try {
+    const response = await fetch(
+      'https://graphql.datocms.com/',
+      JSON.parse(serializedInit)
     )
+    const responseBody = await response.json()
+    if (!response.ok) {
+      throw new Error(
+        `${response.status} ${response.statusText}: ${JSON.stringify(
+          responseBody
+        )}`
+      )
+    }
+    return responseBody
+  } catch (error) {
+    throw error(error)
   }
-  return responseBody
 })
+
 export async function performRequest({
   query,
   variables = {},

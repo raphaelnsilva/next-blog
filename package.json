@@ -7,13 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest",
-    "test:watch": "jest --wach"
+    "test": "jest"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
     "graphql-request": "^6.1.0",
     "next": "13.5.6",
+    "next-cloudinary": "^4.28.0",
     "prism-themes": "^1.9.0",
     "prismjs": "^1.29.0",
     "react": "^18",

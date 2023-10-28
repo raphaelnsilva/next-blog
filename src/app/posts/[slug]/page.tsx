@@ -1,4 +1,4 @@
-import { ARTICLE_QUERY, PATHS_QUERY } from '@/interfaces/queries'
+import { ARTICLE_QUERY, PATHS_QUERY } from '../../../interfaces/queries'
 import { performRequest } from '../../../lib/datocms'
 import Renderer from '../../../components/renderer/renderer'
 import { Metadata } from 'next'
@@ -11,13 +11,12 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const post = await performRequest({
     query: ARTICLE_QUERY,
     variables: { slug: params.slug },
-    revalidate: 1
+    revalidate: 60
   })
-  const postData = post.article
 
   return (
     <main>
-      <Renderer post={postData} />
+      <Renderer post={post.article} />
     </main>
   )
 }

@@ -32,6 +32,17 @@ export default function Footer() {
             Posts
           </li>
         </Link>
+        <Link href='/about'>
+          <li
+            className={
+              pathName === '/about'
+                ? `${styles.navLinksActive}`
+                : styles.navLinks
+            }
+          >
+            Sobre nós
+          </li>
+        </Link>
       </ul>
     </footer>
   )

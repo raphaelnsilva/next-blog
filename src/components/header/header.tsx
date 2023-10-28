@@ -49,6 +49,17 @@ export default function Header() {
               Posts
             </li>
           </Link>
+          <Link href='/about'>
+            <li
+              className={
+                pathName === '/about'
+                  ? `${styles.navLinksActive}`
+                  : styles.navLinks
+              }
+            >
+              Sobre nós
+            </li>
+          </Link>
         </ul>
       </nav>
       {open && (
@@ -81,6 +92,21 @@ export default function Header() {
               }
             >
               Posts
+            </li>
+          </Link>
+          <Link href='/about'>
+            <li
+              onClick={() => {
+                setOpen(!open)
+              }}
+              data-testid='About'
+              className={
+                pathName === '/about'
+                  ? `${styles.navMenuExpandedActive}`
+                  : styles.navMenuExpanded
+              }
+            >
+              Sobre nós
             </li>
           </Link>
         </ul>
