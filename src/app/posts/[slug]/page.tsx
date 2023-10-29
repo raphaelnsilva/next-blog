@@ -1,4 +1,4 @@
-import { ARTICLE_QUERY, PATHS_QUERY } from '../../../interfaces/queries'
+import { ARTICLE_QUERY } from '../../../interfaces/queries'
 import { performRequest } from '../../../lib/datocms'
 import Renderer from '../../../components/renderer/renderer'
 import { Metadata } from 'next'
@@ -19,12 +19,4 @@ export default async function Post({ params }: { params: { slug: string } }) {
       <Renderer post={post.article} />
     </main>
   )
-}
-
-export async function generateStaticParams() {
-  const slugQuery = await performRequest({
-    query: PATHS_QUERY,
-    revalidate: 1
-  })
-  return slugQuery.allArticles
 }
