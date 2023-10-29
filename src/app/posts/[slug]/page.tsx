@@ -1,6 +1,11 @@
 import { ARTICLE_QUERY, PATHS_QUERY } from '../../../interfaces/queries'
 import { performRequest } from '../../../lib/datocms'
 import Renderer from '../../../components/renderer/renderer'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: `Post | MundoDev`
+}
 
 export default async function Post({ params }: { params: { slug: string } }) {
   const post = await performRequest({
