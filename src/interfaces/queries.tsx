@@ -10,14 +10,6 @@ export const HOMEPAGE_QUERY = `
   }
 `
 
-export const PATHS_QUERY = `
-  query Query {
-    allArticles {
-      slug
-    }
-  }
-`
-
 export const ARTICLE_QUERY = `
   query Query($slug: String)  {
     article(filter: {slug: {eq: $slug}}) {
