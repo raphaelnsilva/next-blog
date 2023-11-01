@@ -8,7 +8,7 @@
 }
 
 .navComponent {
-  height: 80px;
+  height: 10vh;
   max-width: 780px;
   margin: auto;
   display: flex;
