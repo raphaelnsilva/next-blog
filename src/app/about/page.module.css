@@ -1,11 +1,16 @@
 .aboutContainer {
+  height: 80vh;
   width: 500px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
 }
 
 .aboutContainer h1 {
+  margin: 0;
   font-size: 35px;
-  margin: 30px 0 0 0;
   font-weight: 200;
   font-size: 30px;
   color: var(--blackColor);
@@ -14,5 +19,6 @@
 }
 
 .aboutContainer p {
+  margin: 0;
   text-align: center;
 }
