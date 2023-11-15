@@ -3,8 +3,23 @@ import { ResponsiveImageType } from 'react-datocms'
 export interface Article {
   slug: string
   title: string
+  author: string
   excerpt: string
   publishDate: string
+  postImage: {
+    url: string
+    responsiveImage: {
+      width: number
+      webpSrcSet: string
+      srcSet: string
+      src: string
+      sizes: string
+      height: number
+      bgColor: string
+      base64: string
+      aspectRatio: number
+    }
+  }
 }
 
 export interface RecordType {
@@ -34,7 +49,22 @@ export interface PostTypes {
     slug: string
     title: string
     author: string
+    excerpt: string
     publishDate: string
     content: null
+    postImage: {
+      url: string
+      responsiveImage: {
+        width: number
+        webpSrcSet: string
+        srcSet: string
+        src: string
+        sizes: string
+        height: number
+        bgColor: string
+        base64: string
+        aspectRatio: number
+      }
+    }
   }
 }

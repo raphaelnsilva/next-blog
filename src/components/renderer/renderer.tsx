@@ -26,9 +26,12 @@ export default function Renderer({ post }: PostTypes) {
         <p className={styles.postDate}>
           <PiUserCircleGearBold /> Autor: {post.author}
         </p>
+        {/* eslint-disable-next-line jsx-a11y/alt-text */}
+        <Image data={post.postImage.responsiveImage} />
         <p className={styles.postDate}>
           <FaRegCalendarAlt /> Publicado em: {post.publishDate}
         </p>
+        <p>{post.excerpt}</p>
       </header>
       <StructuredText
         data={post.content}

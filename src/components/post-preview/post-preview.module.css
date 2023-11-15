@@ -6,6 +6,7 @@
 .postLink {
   font-size: 24px;
   color: var(--blueColor);
+  text-decoration: underline;
 }
 
 .publishData {
@@ -14,8 +15,26 @@
   gap: 10px;
   font-style: italic;
   color: #0000009f;
+  margin: 1rem 0;
 }
 
 .publishData path {
   color: #0000009f;
+}
+
+.postDate {
+  display: flex;
+  gap: 10px;
+  font-style: italic;
+  color: #0000009f;
+  padding-bottom: 10px;
+}
+
+.postDate path {
+  color: #0000009f;
+}
+
+.postDate svg {
+  margin: auto 0;
+  font-size: 19px;
 }

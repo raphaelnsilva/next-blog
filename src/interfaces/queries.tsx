@@ -6,6 +6,20 @@ export const HOMEPAGE_QUERY = `
       excerpt
       publishDate
       author
+      postImage { 
+        url
+        responsiveImage {
+          width
+          webpSrcSet
+          srcSet
+          src
+          sizes
+          height
+          bgColor
+          base64
+          aspectRatio
+        }
+      }
     }
   }
 `
@@ -16,7 +30,22 @@ export const ARTICLE_QUERY = `
       slug
       title
       author
+      excerpt
       publishDate
+      postImage { 
+        url
+        responsiveImage {
+          width
+          webpSrcSet
+          srcSet
+          src
+          sizes
+          height
+          bgColor
+          base64
+          aspectRatio
+        }
+      }
       content {
         value
         blocks {
