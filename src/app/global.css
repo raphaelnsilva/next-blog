@@ -7,11 +7,10 @@
 
 blockquote{
   font-size: 1.4em;
-  width:60%;
   margin:50px auto;
   font-style:italic;
   color: #555555;
-  padding:1.2em 30px 1.2em 75px;
+  padding:1.2em 1px 1.2em 45px;
   border-left:8px solid #78C0A8 ;
   line-height:1.6;
   position: relative;
@@ -61,6 +60,7 @@ body {
 
 p {
   font-size: 16px;
+  line-height: 1.7rem;
 }
 
 mark {
