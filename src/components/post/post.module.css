@@ -1,0 +1,48 @@
+.postsHeader {
+  margin: 0;
+  font-weight: 200;
+  font-size: 30px;
+  color: var(--blackColor);
+  text-align: center;
+}
+
+.mainHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.mainHeader input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+}
+
+.searchBtn {
+  cursor: pointer;
+  border-radius: 0.2rem;
+  border: none;
+  width: 1rem
+  font
+}
+
+
+@media (min-width: 570px) {
+  .mainHeader {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .mainHeader input {
+    width: 300px;
+  }
+}
+
+@media (min-width: 700px) {
+  .allArticles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+} 

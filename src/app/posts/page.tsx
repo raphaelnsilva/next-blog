@@ -1,9 +1,7 @@
-import styles from './page.module.css'
 import { performRequest } from '../../lib/datocms'
-import PostPreview from '../../components/post-preview/post-preview'
-import { Article } from '../../interfaces/types'
 import { HOMEPAGE_QUERY } from '../../interfaces/queries'
 import { Metadata } from 'next'
+import Post from '../../components/post/post'
 
 export const metadata: Metadata = {
   title: 'Blog | MundoDev',
@@ -16,20 +14,5 @@ export default async function Posts() {
     revalidate: 10
   })
 
-  return (
-    <main className={styles.mainContainer}>
-      {/* <header className={styles.postsHeader}>Últimos Posts!</header> */}
-      {allArticles.map((article: Article) => (
-        <PostPreview
-          key={article.slug}
-          title={article.title}
-          author={article.author}
-          excerpt={article.excerpt}
-          publishDate={article.publishDate}
-          slug={article.slug}
-          postImage={article.postImage}
-        />
-      ))}
-    </main>
-  )
+  return <Post data={allArticles} />
 }

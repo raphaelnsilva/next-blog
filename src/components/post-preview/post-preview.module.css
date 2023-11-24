@@ -4,7 +4,7 @@
 }
 
 .postLink {
-  font-size: 24px;
+  font-size: 16px;
   color: var(--blueColor);
   text-decoration: underline;
 }
@@ -37,4 +37,26 @@
 .postDate svg {
   margin: auto 0;
   font-size: 19px;
+}
+
+@media (min-width: 400px) {
+  .postLink {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 700px) {
+  .postsContainer {
+    width: 300px;
+  }
+
+  .postLink {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 848px) {
+  .postsContainer {
+    width: 300px
+  }
 }

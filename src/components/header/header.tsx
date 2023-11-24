@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation'
 import styles from './header.module.css'
 import Link from 'next/link'
 import { HiXMark, HiBars3BottomRight } from 'react-icons/hi2'
+import Image from 'next/image'
 
 export default function Header() {
   const pathName = usePathname()
@@ -18,7 +19,12 @@ export default function Header() {
             className={styles.brandName}
             onClick={() => (open ? setOpen(!open) : '')}
           >
-            MundoDev
+            <Image
+              src='/brand.png'
+              alt={'teste'}
+              width={50}
+              height={50}
+            ></Image>
           </span>
         </Link>
         <span

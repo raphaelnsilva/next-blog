@@ -3,7 +3,6 @@ import { ResponsiveImageType } from 'react-datocms'
 export interface Article {
   slug: string
   title: string
-  author: string
   excerpt: string
   publishDate: string
   postImage: {

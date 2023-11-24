@@ -7,11 +7,10 @@
 
 blockquote{
   font-size: 1.4em;
-  width:60%;
   margin:50px auto;
   font-style:italic;
   color: #555555;
-  padding:1.2em 30px 1.2em 75px;
+  padding: 1.2em 20px 1.2em 48px;
   border-left:8px solid #78C0A8 ;
   line-height:1.6;
   position: relative;
@@ -36,6 +35,7 @@ blockquote::after{
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: var(--blackColor);
   box-sizing: border-box;
+
 }
 
 html,
@@ -47,7 +47,7 @@ body {
 
 body {
   padding: 0 16px;
-  max-width: 700px;
+  max-width: 1024px;
   margin: auto;
   background-color: var(--backGround);
 }
