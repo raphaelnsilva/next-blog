@@ -4,6 +4,9 @@
   --backGround: #FBFEFB;
   --border: #0000002f;
 }
+.teste {
+  display: flex;
+}
 
 blockquote{
   font-size: 1.4em;
@@ -36,7 +39,6 @@ blockquote::after{
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: var(--blackColor);
   box-sizing: border-box;
-
 }
 
 html,
@@ -48,7 +50,7 @@ body {
 
 body {
   padding: 0 16px;
-  max-width: 1024px;
+  max-width: 700px;
   margin: auto;
   background-color: var(--backGround);
 }

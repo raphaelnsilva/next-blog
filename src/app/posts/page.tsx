@@ -1,7 +1,7 @@
 import { performRequest } from '../../lib/datocms'
 import { HOMEPAGE_QUERY } from '../../interfaces/queries'
 import { Metadata } from 'next'
-import Post from '../../components/post/post'
+import Articles from '../../components/articles/articles'
 
 export const metadata: Metadata = {
   title: 'Blog | MundoDev',
@@ -13,6 +13,5 @@ export default async function Posts() {
     query: HOMEPAGE_QUERY,
     revalidate: 10
   })
-
-  return <Post data={allArticles} />
+  return <Articles data={allArticles} />
 }

@@ -1,14 +1,14 @@
 'use client'
-import { useState  } from 'react'
+import { useState } from 'react'
 import { Article } from '../../interfaces/types'
-import PostPreview from '../post-preview/post-preview'
-import styles from './post.module.css'
+import Preview from '../preview/preview'
+import styles from './articles.module.css'
 
 interface PostProps {
   data: Article[]
 }
 
-export default function Post({ data }: PostProps) {
+export default function Articles({ data }: PostProps) {
   const [search, setSearch] = useState('')
   const lowerCase = search.toLowerCase()
 
@@ -18,20 +18,8 @@ export default function Post({ data }: PostProps) {
 
   return (
     <main className={styles.main}>
-      <section className={styles.allArticles}>
-        {posts.map((post: Article) => (
-          <PostPreview
-            key={post.slug}
-            title={post.title}
-            excerpt={post.excerpt}
-            publishDate={post.publishDate}
-            slug={post.slug}
-            postImage={post.postImage}
-          />
-        ))}
-      </section>
-      <aside className={styles.aside}>
-        <form>
+      <aside>
+        <form className={styles.form}>
           <label htmlFor='search'>Pesquisar</label>
           <input
             className={styles.inputSearch}
@@ -43,6 +31,19 @@ export default function Post({ data }: PostProps) {
           />
         </form>
       </aside>
+      <section className={styles.allArticles}>
+        {posts.map((post: Article) => (
+          <Preview
+            key={post.slug}
+            title={post.title}
+            excerpt={post.excerpt}
+            publishDate={post.publishDate}
+            slug={post.slug}
+            postImage={post.postImage}
+            category={post.category}
+          />
+        ))}
+      </section>
     </main>
   )
 }

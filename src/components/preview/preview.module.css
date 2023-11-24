@@ -45,12 +45,15 @@
   }
 }
 
-@media (min-width: 700px) {
+@media(min-width: 700px){
   .postsContainer {
     flex: 1 0 calc(50% - 20px);
     max-width: calc(50% - 20px);
     box-sizing: border-box;
   }
+}
+
+@media (min-width: 1000px) {
 
   .postLink {
     font-size: 16px;

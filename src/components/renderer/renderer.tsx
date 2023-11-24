@@ -22,26 +22,23 @@ export default function Renderer({ post }: PostTypes) {
 
   return (
     <main className={styles.postContent}>
-      <header className={styles.postHeader}>
-        {/* <p className={styles.postDate}>
-          <PiUserCircleGearBold /> Autor: {post.author}
-        </p> */}
-        {/* eslint-disable-next-line jsx-a11y/alt-text */}
-        <Image data={post.postImage.responsiveImage} />
+      <article>
         <h1 className={styles.postTitle}>{post.title}</h1>
-        <p>{post.excerpt}</p>
+        {/* <p>{post.excerpt}</p> */}
         <p className={styles.postDate}>
           <FaRegCalendarAlt /> Publicado em: {post.publishDate}
         </p>
-      </header>
-      <StructuredText
-        data={post.content}
-        renderBlock={(context) => {
-          const imageRecord = context.record.image as RecordType
-          // eslint-disable-next-line jsx-a11y/alt-text
-          return <Image data={imageRecord.responsiveImage} />
-        }}
-      />
+        {/* eslint-disable-next-line jsx-a11y/alt-text */}
+        <Image data={post.postImage.responsiveImage} />
+        <StructuredText
+          data={post.content}
+          renderBlock={(context) => {
+            const imageRecord = context.record.image as RecordType
+            // eslint-disable-next-line jsx-a11y/alt-text
+            return <Image data={imageRecord.responsiveImage} />
+          }}
+        />
+      </article>
     </main>
   )
 }

@@ -1,11 +1,13 @@
+.postContent{
+  padding: 23px 0;
+  display: flex;
+}
+
 .postContent p {
   line-height: 2rem;
 }
 
-.postHeader {
-  border-bottom: 2px dashed var(--border);
-  padding: 23px 0;
-}
+
 
 .postTitle {
   font-size: 28px;

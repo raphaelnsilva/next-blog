@@ -2,6 +2,7 @@ export const HOMEPAGE_QUERY = `
   query Query {
     allArticles {
       slug
+      category
       title
       excerpt
       publishDate
@@ -33,7 +34,6 @@ export const ARTICLE_QUERY = `
       excerpt
       publishDate
       postImage { 
-        url
         responsiveImage {
           width
           webpSrcSet

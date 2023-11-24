@@ -1,16 +1,17 @@
 import Link from 'next/link'
 import { FaRegCalendarAlt } from 'react-icons/fa'
-import styles from './post-preview.module.css'
+import styles from './preview.module.css'
 import { Article } from '../../interfaces/types'
 import { Image } from 'react-datocms'
 
-const PostPreview = ({
+export default function Preview({
   title,
   excerpt,
   publishDate,
   slug,
-  postImage
-}: Article) => {
+  postImage,
+  category
+}: Article) {
   return (
     <article className={styles.postsContainer}>
       <Link href={`/posts/${slug}`}>
@@ -25,8 +26,7 @@ const PostPreview = ({
         Publicado em: {publishDate}
       </span>
       <p>{excerpt}</p>
+      <p>{category}</p>
     </article>
   )
 }
-
-export default PostPreview

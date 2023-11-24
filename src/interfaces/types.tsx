@@ -5,6 +5,7 @@ export interface Article {
   title: string
   excerpt: string
   publishDate: string
+  category: string
   postImage: {
     url: string
     responsiveImage: {
