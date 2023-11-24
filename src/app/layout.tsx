@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import './global.css'
-import Header from '../components/header/header'
+import Navigation from '../components/navigation/navigation'
 import Footer from '../components/footer/footer'
+import Header from '../components/header/header'
 
 export const metadata: Metadata = {
   title: 'MundoDev',
@@ -17,6 +18,7 @@ export default function RootLayout({
     <html lang='pt-br'>
       <body suppressHydrationWarning={true}>
         <Header />
+        <Navigation />
         {children}
         <Footer />
       </body>

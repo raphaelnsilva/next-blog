@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState  } from 'react'
 import { Article } from '../../interfaces/types'
 import PostPreview from '../post-preview/post-preview'
 import styles from './post.module.css'
@@ -17,17 +17,7 @@ export default function Post({ data }: PostProps) {
   )
 
   return (
-    <main>
-      <header className={styles.mainHeader}>
-        <h1 className={styles.postsHeader}>Nossas Receitas!</h1>
-        <input
-          className={styles.inputSearch}
-          type='search'
-          value={search}
-          placeholder=' Pesquisar'
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </header>
+    <main className={styles.main}>
       <section className={styles.allArticles}>
         {posts.map((post: Article) => (
           <PostPreview
@@ -40,6 +30,19 @@ export default function Post({ data }: PostProps) {
           />
         ))}
       </section>
+      <aside className={styles.aside}>
+        <form>
+          <label htmlFor='search'>Pesquisar</label>
+          <input
+            className={styles.inputSearch}
+            type='search'
+            value={search}
+            placeholder=' pesquise por receitas...'
+            name='search'
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </form>
+      </aside>
     </main>
   )
 }

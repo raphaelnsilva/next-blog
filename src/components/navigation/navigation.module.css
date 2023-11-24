@@ -1,0 +1,35 @@
+.nav {
+  border-bottom: 2px dashed var(--border);
+}
+
+.nav ul {
+  padding: 0; 
+}
+
+.nav li {
+  font-size: 14px;
+  list-style: none;
+}
+
+.brandName {
+  display: flex;
+}
+
+.navMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.navLinksActive {
+  border-bottom: 2px dashed var(--blueColor);
+  color: var(--blueColor);
+}
+
+@media (min-width: 350px) {
+  .nav li {
+    font-size: 18px;
+  }
+}
+
+

@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
-import Header from '@/components/header/header'
+import Header from '@/components/navigation/navigation'
 
 describe('Header Component', () => {
   it('Deve renderizar o componente corretamente', () => {

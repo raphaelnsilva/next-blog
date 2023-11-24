@@ -47,7 +47,9 @@
 
 @media (min-width: 700px) {
   .postsContainer {
-    width: 300px;
+    flex: 1 0 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    box-sizing: border-box;
   }
 
   .postLink {

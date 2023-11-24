@@ -1,83 +1,10 @@
-.headerComponent {
-  border-bottom: 2px dashed var(--border);
-}
-
-.headerComponent li {
-  font-size: 18px;
-  list-style: none;
-}
-
-.navComponent {
-  height: 10vh;
-  max-width: 780px;
-  margin: auto;
+.header {
   display: flex;
+  justify-content: center;
   align-items: center;
-  position: relative;
-}
+  background-color: rgb(137, 55, 55);
+} 
 
-.brandName {
-  display: flex;
-}
-
-.menuIcons {
-  cursor: pointer;
-  position: absolute;
-  font-size: 25px;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-}
-
-.navMenu {
-  margin-left: auto;
-  display: flex;
-  padding: 2rem 0;
-}
-
-.navLinks {
-  margin: 0 0 0 30px;
-}
-
-.navLinksActive {
-  border-bottom: 2px dashed var(--blueColor);
-  color: var(--blueColor);
-  margin: 0 0 0 30px;
-}
-
-.navMenuExpanded {
-  display: none;
-}
-
-@media (min-width: 640px) {
-  .menuIcons {
-    display: none;
-  }
-}
-
-@media (max-width: 640px) {
-  .navMenu {
-    display: none;
-  }
-  .navLinks {
-    text-align: center;
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0;
-    width: 100%;
-    padding: 10px 0;
-  }
-
-  .navMenuExpanded {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 0;
-  }
-
-  .navMenuExpandedActive {
-    border-bottom: 2px dashed var(--blueColor);
-    color: var(--blueColor);
-  }
+.header h1 {
+  color: white;
 }

@@ -1,121 +1,12 @@
-'use client'
-import { useState } from 'react'
-import { usePathname } from 'next/navigation'
+import React from 'react'
 import styles from './header.module.css'
-import Link from 'next/link'
-import { HiXMark, HiBars3BottomRight } from 'react-icons/hi2'
 import Image from 'next/image'
 
 export default function Header() {
-  const pathName = usePathname()
-
-  const [open, setOpen] = useState(false)
-
   return (
-    <header className={styles.headerComponent}>
-      <nav className={styles.navComponent}>
-        <Link href='/'>
-          <span
-            className={styles.brandName}
-            onClick={() => (open ? setOpen(!open) : '')}
-          >
-            <Image
-              src='/brand.png'
-              alt={'teste'}
-              width={50}
-              height={50}
-            ></Image>
-          </span>
-        </Link>
-        <span
-          className={styles.menuIcons}
-          data-testid='menuIcons'
-          onClick={() => setOpen(!open)}
-        >
-          {!open ? <HiBars3BottomRight /> : <HiXMark />}
-        </span>
-        <ul className={styles.navMenu}>
-          <Link href='/'>
-            <li
-              className={
-                pathName === '/' ? `${styles.navLinksActive}` : styles.navLinks
-              }
-            >
-              Home
-            </li>
-          </Link>
-          <Link href='/posts'>
-            <li
-              className={
-                pathName === '/posts'
-                  ? `${styles.navLinksActive}`
-                  : styles.navLinks
-              }
-            >
-              Posts
-            </li>
-          </Link>
-          <Link href='/about'>
-            <li
-              className={
-                pathName === '/about'
-                  ? `${styles.navLinksActive}`
-                  : styles.navLinks
-              }
-            >
-              Sobre
-            </li>
-          </Link>
-        </ul>
-      </nav>
-      {open && (
-        <ul className={styles.navMenuExpanded} data-testid='expandedMenu'>
-          <Link href='/'>
-            <li
-              onClick={() => {
-                setOpen(!open)
-              }}
-              data-testid='Home'
-              className={
-                pathName === '/'
-                  ? `${styles.navMenuExpandedActive}`
-                  : styles.navMenuExpanded
-              }
-            >
-              Home
-            </li>
-          </Link>
-          <Link href='/posts'>
-            <li
-              onClick={() => {
-                setOpen(!open)
-              }}
-              className={
-                pathName === '/posts'
-                  ? `${styles.navMenuExpandedActive}`
-                  : styles.navMenuExpanded
-              }
-            >
-              Posts
-            </li>
-          </Link>
-          <Link href='/about'>
-            <li
-              onClick={() => {
-                setOpen(!open)
-              }}
-              data-testid='A'
-              className={
-                pathName === '/about'
-                  ? `${styles.navMenuExpandedActive}`
-                  : styles.navMenuExpanded
-              }
-            >
-              Sobre
-            </li>
-          </Link>
-        </ul>
-      )}
+    <header className={styles.header}>
+      <Image src='/brand.png' alt={'brand'} width={100} height={100} />
+      <h1>Receitas Da Dona Maria</h1>
     </header>
   )
 }

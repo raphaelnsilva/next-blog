@@ -1,48 +1,38 @@
-.postsHeader {
-  margin: 0;
-  font-weight: 200;
-  font-size: 30px;
-  color: var(--blackColor);
-  text-align: center;
+.main {
+  
 }
 
-.mainHeader {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 2rem 0;
+.allArticles {
+  width: 100%;
 }
 
-.mainHeader input {
+.aside {
+  padding: 2rem;
+}
+
+.aside form {
+  position: sticky;
+  top: 20px;
+} 
+
+.aside input {
   border: none;
-  border-bottom: 1px solid #ccc;
+  border: 1px solid #ccc;
   background-color: transparent;
-}
-
-.searchBtn {
-  cursor: pointer;
-  border-radius: 0.2rem;
-  border: none;
-  width: 1rem
-  font
-}
-
-
-@media (min-width: 570px) {
-  .mainHeader {
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-
-  .mainHeader input {
-    width: 300px;
-  }
+  padding: 0.5rem;
+  margin: 5px 0;
 }
 
 @media (min-width: 700px) {
   .allArticles {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 } 
+
+@media (min-width: 900px) {
+  .main {
+    display: flex;
+  }
+}
