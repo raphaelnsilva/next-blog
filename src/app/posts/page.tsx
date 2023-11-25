@@ -4,8 +4,8 @@ import { Metadata } from 'next'
 import Articles from '../../components/articles/articles'
 
 export const metadata: Metadata = {
-  title: 'Blog | MundoDev',
-  description: 'Navegue através de nossos artigos!'
+  title: 'Receitas',
+  description: 'Descubra novas receitas incríveis!'
 }
 
 export default async function Posts() {
