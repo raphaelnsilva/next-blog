@@ -44,9 +44,6 @@ export interface RecordType {
 }
 
 export interface PostTypes {
-<<<<<<< Updated upstream
-  allPosts: []
-=======
   allPosts: [
     {
       slug: string
@@ -72,8 +69,6 @@ export interface PostTypes {
       }
     }
   ]
->>>>>>> Stashed changes
->>>>>>> Stashed changes
   post: {
     post: object
     slug: string
