@@ -43,6 +43,34 @@ export interface RecordType {
 }
 
 export interface PostTypes {
+<<<<<<< Updated upstream
+=======
+  allPosts: [
+    {
+      slug: string
+      title: string
+      author: string
+      excerpt: string
+      publishDate: string
+      category: string
+      content: null
+      postImage: {
+        url: string
+        responsiveImage: {
+          width: number
+          webpSrcSet: string
+          srcSet: string
+          src: string
+          sizes: string
+          height: number
+          bgColor: string
+          base64: string
+          aspectRatio: number
+        }
+      }
+    }
+  ]
+>>>>>>> Stashed changes
   post: {
     post: object
     slug: string
