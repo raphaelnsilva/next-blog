@@ -44,6 +44,7 @@ export interface RecordType {
 }
 
 export interface PostTypes {
+  allPosts: []
   post: {
     post: object
     slug: string
