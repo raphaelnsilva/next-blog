@@ -67,12 +67,14 @@ export interface PostTypes {
       }
     }
   }>
+
   post: {
     post: object
     slug: string
     title: string
     author: string
     excerpt: string
+    category: string
     publishDate: string
     content: null
     postImage: {
