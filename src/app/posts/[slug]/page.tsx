@@ -1,4 +1,5 @@
 import { ARTICLE_QUERY } from '../../../interfaces/queries'
+import { HOMEPAGE_QUERY } from '../../../interfaces/queries'
 import { performRequest } from '../../../lib/datocms'
 import Renderer from '../../../components/renderer/renderer'
 import { Metadata } from 'next'
@@ -18,6 +19,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const { allArticles } = await performRequest({
     query: HOMEPAGE_QUERY,
     revalidate: 10
-  })
-  return <Renderer post={post.article} allPosts={allArticles} />
+  }
+  const articles = allArticles
+  return <Renderer post={post.article} allPosts={articles} />
 }
