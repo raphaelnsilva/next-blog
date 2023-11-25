@@ -1,15 +1,15 @@
 'use client'
 import { useState } from 'react'
 import { Article } from '../../interfaces/types'
-import Preview from '../preview/preview'
-import styles from './articles.module.css'
+import styles from './aside.module.css'
+import Link from 'next/link'
 import { FaSearch } from 'react-icons/fa'
 
 interface PostProps {
   data: Article[]
 }
 
-export default function Articles({ data }: PostProps) {
+export default function Aside({ data }: PostProps) {
   const [search, setSearch] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('')
   const lowerCase = search.toLowerCase()
@@ -28,8 +28,8 @@ export default function Articles({ data }: PostProps) {
   }
 
   return (
-    <main className={styles.main}>
-      <aside className={styles.aside}>
+    <aside className={styles.aside}>
+      <nav className={styles.nav}>
         <form className={styles.formSearch}>
           <input
             className={styles.inputSearch}
@@ -47,10 +47,10 @@ export default function Articles({ data }: PostProps) {
           </button>
         </form>
         <select
+          className={styles.selectOptions}
           name='categorias'
           value={selectedCategory}
           onChange={handleCategoryChange}
-          className={styles.selectOptions}
         >
           <option value=''>Todas Receitas</option>
           <option value='receitas doces'>Receitas Doces</option>
@@ -59,24 +59,20 @@ export default function Articles({ data }: PostProps) {
           <option value='bebidas'>Bebidas</option>
           <option value='curiosidades'>Curiosidades</option>
         </select>
-      </aside>
-      <ul className={styles.allArticles}>
+      </nav>
+      <ul className={styles.asidePosts}>
         {posts.length === 0 ? (
-          <h1>Nenhum post encontrado com a pesquisa.</h1>
+          <p className={styles.errorSearch}>
+            Nenhum post encontrado com a pesquisa.
+          </p>
         ) : (
           posts.map((post: Article) => (
-            <Preview
-              key={post.slug}
-              title={post.title}
-              excerpt={post.excerpt}
-              publishDate={post.publishDate}
-              slug={post.slug}
-              postImage={post.postImage}
-              category={post.category}
-            />
+            <li key={post.slug}>
+              <Link href={`/posts/${post.slug}`}>{post.title}</Link>
+            </li>
           ))
         )}
       </ul>
-    </main>
+    </aside>
   )
 }

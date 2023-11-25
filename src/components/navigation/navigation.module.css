@@ -1,18 +1,11 @@
 .nav {
-  border-bottom: 2px dashed var(--border);
+  border-bottom: 1px solid #a33709;
 }
 
-.nav ul {
-  padding: 0; 
-}
-
-.nav li {
-  font-size: 14px;
+.navMenu {
   list-style: none;
-}
-
-.brandName {
-  display: flex;
+  padding: 15px;
+  margin: 0;
 }
 
 .navMenu {
@@ -21,9 +14,13 @@
   justify-content: space-evenly;
 }
 
+.brandName {
+  display: flex;
+}
+
 .navLinksActive {
-  border-bottom: 2px dashed var(--blueColor);
-  color: var(--blueColor);
+  border-bottom: 1px solid #9f3000dd;
+  color: #9f3000dd;
 }
 
 @media (min-width: 350px) {

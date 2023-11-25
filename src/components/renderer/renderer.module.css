@@ -1,6 +1,7 @@
 .postContent{
   padding: 23px 0;
   display: flex;
+  flex-direction: column;
 }
 
 .postContent p {
@@ -12,6 +13,7 @@
 .postTitle {
   font-size: 28px;
   font-weight: 700; 
+  color: #a33709;
 }
 
 .postDate {
@@ -29,4 +31,10 @@
 .postDate svg {
   margin: auto 0;
   font-size: 19px;
+}
+
+@media (min-width: 800px) {
+  .postContent {
+    flex-direction: row;
+  } 
 }

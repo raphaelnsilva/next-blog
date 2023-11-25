@@ -15,9 +15,8 @@
   font-size: 35px;
   font-weight: 200;
   font-size: 30px;
-  color: var(--blackColor);
+  color: #282728;
   text-align: center;
-
 }
 
 .teste p {
@@ -49,16 +48,16 @@
 }
 
 .postLink {
-  background-color: var(--backGround);
-  border: 1px solid var(--blackColor);
+  background-color: #fff;
+  border: 1px solid #282728;
   padding: 10px;
   border-radius: 8px;
-  color: var(--blackColor);
+  color: #282728;
 }
 
 .aboutLink {
-  background-color: var(--blackColor);
+  background-color: #282728;
   padding: 10px;
   border-radius: 8px;
-  color: var(--backGround);
+  color: #FFF;
 }

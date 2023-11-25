@@ -21,6 +21,6 @@
 }
 
 .navLinksActive {
-  border-bottom: 2px dashed var(--blueColor);
-  color: var(--blueColor);
+  border-bottom: 1px solid #9f3000dd;
+  color: #9f3000dd;
 }

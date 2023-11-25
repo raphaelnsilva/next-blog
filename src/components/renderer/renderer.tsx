@@ -4,13 +4,12 @@ import { useEffect } from 'react'
 import { RecordType } from '../../interfaces/types'
 import { PostTypes } from '../../interfaces/types'
 import { Image, StructuredText } from 'react-datocms'
-// import { PiUserCircleGearBold } from 'react-icons/pi'
 import { FaRegCalendarAlt } from 'react-icons/fa'
 import Prism from 'prismjs'
 import 'prismjs/themes/prism.css'
+import Aside from '../aside/aside'
 
-export default function Renderer({ post }: PostTypes) {
-  // Code Highlighter
+export default function Renderer({ post, allPosts }: PostTypes) {
   useEffect(() => {
     const codeBlocks = document.querySelectorAll('pre')
     codeBlocks.forEach((codeBlock) => {
@@ -39,6 +38,7 @@ export default function Renderer({ post }: PostTypes) {
           }}
         />
       </article>
+      <Aside data={allPosts} />
     </main>
   )
 }

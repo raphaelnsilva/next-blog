@@ -13,7 +13,7 @@ export default function Preview({
   category
 }: Article) {
   return (
-    <article className={styles.postsContainer}>
+    <li className={styles.postsContainer}>
       <Link href={`/posts/${slug}`}>
         <h1 className={styles.postLink}>{title}</h1>
       </Link>
@@ -27,6 +27,6 @@ export default function Preview({
       </span>
       <p>{excerpt}</p>
       <p>{category}</p>
-    </article>
+    </li>
   )
 }
