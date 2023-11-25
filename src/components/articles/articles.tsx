@@ -29,7 +29,7 @@ export default function Articles({ data }: PostProps) {
 
   return (
     <main className={styles.main}>
-      <aside className={styles.aside}>
+      <nav className={styles.nav}>
         <form className={styles.formSearch}>
           <input
             className={styles.inputSearch}
@@ -59,7 +59,7 @@ export default function Articles({ data }: PostProps) {
           <option value='bebidas'>Bebidas</option>
           <option value='curiosidades'>Curiosidades</option>
         </select>
-      </aside>
+      </nav>
       <ul className={styles.allArticles}>
         {posts.length === 0 ? (
           <h1>Nenhum post encontrado com a pesquisa.</h1>

@@ -1,14 +1,21 @@
-.aside {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-  margin: 2rem 0 0 0;
-}
 
 .formSearch {
   display: flex;
   width: 100%;
+}
+
+.nav {
+  background-color: #F5F5F5;
+  padding: 1rem 0.5rem;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  position: sticky;
+  top: 60px;
+  z-index: 1000;
+  box-shadow: 0px 4px 5px #00000034
 }
 
 .allArticles {
@@ -64,7 +71,7 @@
     justify-content: space-between;
   }
 
-  .aside {
+  .nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;

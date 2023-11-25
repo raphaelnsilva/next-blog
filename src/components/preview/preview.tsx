@@ -25,8 +25,8 @@ export default function Preview({
         <FaRegCalendarAlt />
         Publicado em: {publishDate}
       </span>
+      <span className={styles.category}>{category}</span>
       <p>{excerpt}</p>
-      <p>{category}</p>
     </li>
   )
 }
