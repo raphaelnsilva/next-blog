@@ -1,31 +1,35 @@
 .nav {
-  border-bottom: 1px solid #a33709;
   position: sticky;
   top: 0px;
-  background-color: #fff;
+  background: #a33709;
   z-index: 1000;
-  height: 60px;
 }
 
 .navMenu {
   list-style: none;
-  padding: 15px;
+  padding: 10px;
   margin: 0;
-}
-
-.navMenu {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
 
+
+
 .brandName {
   display: flex;
 }
 
+.navLinks {
+  color: #fff;
+  font-weight: 500;
+}
+
 .navLinksActive {
-  border-bottom: 1px solid #9f3000dd;
-  color: #9f3000dd;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  font-weight: 500;
+  
 }
 
 @media (min-width: 350px) {

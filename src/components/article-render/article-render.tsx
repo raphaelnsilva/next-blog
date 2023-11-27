@@ -1,5 +1,5 @@
 'use client'
-import styles from './renderer.module.css'
+import styles from './article-render.module.css'
 import { useEffect } from 'react'
 import { RecordType } from '../../interfaces/types'
 import { PostTypes } from '../../interfaces/types'
@@ -9,7 +9,7 @@ import Prism from 'prismjs'
 import 'prismjs/themes/prism.css'
 import Aside from '../aside/aside'
 
-export default function Renderer({ post, allPosts }: PostTypes) {
+export default function ArticleRender({ post, allPosts }: PostTypes) {
   useEffect(() => {
     const codeBlocks = document.querySelectorAll('pre')
     codeBlocks.forEach((codeBlock) => {
@@ -24,9 +24,13 @@ export default function Renderer({ post, allPosts }: PostTypes) {
       <article>
         <h1 className={styles.postTitle}>{post.title}</h1>
         {/* <p>{post.excerpt}</p> */}
-        <p className={styles.postDate}>
-          <FaRegCalendarAlt /> Publicado em: {post.publishDate}
-        </p>
+        <div className={styles.metaData}>
+          <span className={styles.postDate}>
+            <FaRegCalendarAlt />
+            Publicado em: {post.publishDate}
+          </span>
+          <span className={styles.postCategory}>{post.category}</span>
+        </div>
         {/* eslint-disable-next-line jsx-a11y/alt-text */}
         <Image data={post.postImage.responsiveImage} />
         <StructuredText

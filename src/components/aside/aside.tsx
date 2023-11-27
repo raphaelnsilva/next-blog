@@ -63,13 +63,16 @@ export default function Aside({ data }: PostProps) {
       <ul className={styles.asidePosts}>
         {posts.length === 0 ? (
           <p className={styles.errorSearch}>
-            Nenhum post encontrado com a pesquisa.
+            Nenhum post encontrado na pesquisa.
           </p>
         ) : (
           posts.map((post: Article) => (
-            <li key={post.slug}>
-              <Link href={`/posts/${post.slug}`}>{post.title}</Link>
-            </li>
+            <Link key={post.slug} href={`/posts/${post.slug}`}>
+              <li>
+                <p className={styles.asidePostTitle}>{post.title}</p>
+                <span>{post.category}</span>
+              </li>
+            </Link>
           ))
         )}
       </ul>

@@ -11,6 +11,8 @@ blockquote {
   background:#EDEDED;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap');
+
 blockquote::before{
   font-family:Arial;
   content: "\201C";
@@ -26,7 +28,7 @@ blockquote::after{
 }
 
 * {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #282728;
   box-sizing: border-box;
 }
@@ -39,7 +41,7 @@ body {
 
 body {
   padding: 0 16px;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: auto;
   background-color: #fff;
 }

@@ -3,7 +3,7 @@
   padding: 0 1rem;
   height: 100%;
   position: sticky;
-  top: 80px;
+  top: 60px;
   background-color: #f5f5f5;
   border-radius: 5px;
   box-shadow: 0 0 10px #00000034;
@@ -72,7 +72,6 @@
 .asidePosts li {
   padding: 10px 0 ;
   border-bottom: 1px solid #a3370965;
-  font-size: 14px;
 }
 
 

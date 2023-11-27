@@ -1,7 +1,7 @@
-import { ARTICLE_QUERY } from '../../../interfaces/queries'
-import { HOMEPAGE_QUERY } from '../../../interfaces/queries'
-import { performRequest } from '../../../lib/datocms'
-import Renderer from '../../../components/renderer/renderer'
+import { ARTICLE_QUERY } from '../../interfaces/queries'
+import { HOMEPAGE_QUERY } from '../../interfaces/queries'
+import { performRequest } from '../../lib/datocms'
+import ArticleRender from '../../components/article-render/article-render'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -22,5 +22,5 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
   const articles = allArticles
 
-  return <Renderer post={post.article} allPosts={articles} />
+  return <ArticleRender post={post.article} allPosts={articles} />
 }

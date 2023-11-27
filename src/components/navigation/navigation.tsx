@@ -18,17 +18,6 @@ export default function Header() {
             Home
           </li>
         </Link>
-        <Link href='/posts'>
-          <li
-            className={
-              pathName === '/posts'
-                ? `${styles.navLinksActive}`
-                : styles.navLinks
-            }
-          >
-            Receitas
-          </li>
-        </Link>
         <Link href='/about'>
           <li
             className={

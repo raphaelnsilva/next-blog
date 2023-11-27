@@ -1,3 +1,4 @@
+import HomeRender from '@/components/home-render/home-render'
 import { HOMEPAGE_QUERY } from '@/interfaces/queries'
 import { performRequest } from '@/lib/datocms'
 import { Metadata } from 'next'
@@ -12,11 +13,5 @@ export default async function Home() {
     revalidate: 10
   })
 
-  return (
-    <main>
-      <section>
-        <h1>{allArticles.title}</h1>
-      </section>
-    </main>
-  )
+  return <HomeRender data={allArticles} />
 }

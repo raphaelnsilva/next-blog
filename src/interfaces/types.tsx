@@ -22,6 +22,32 @@ export interface Article {
   }
 }
 
+export interface AllPostsType {
+  data: Array<{
+    slug: string
+    title: string
+    author: string
+    excerpt: string
+    publishDate: string
+    category: string
+    content: null
+    postImage: {
+      url: string
+      responsiveImage: {
+        width: number
+        webpSrcSet: string
+        srcSet: string
+        src: string
+        sizes: string
+        height: number
+        bgColor: string
+        base64: string
+        aspectRatio: number
+      }
+    }
+  }>
+}
+
 export interface RecordType {
   responsiveImage: ResponsiveImageType
   record: {

@@ -2,11 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #a33709;
-  font-family: 'Times New Roman', Times, serif;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0;
 } 
 
 .header h1 {
-  font-family: 'Times New Roman', Times, serif;
-  color: white;
+  font-family: 'Quattrocento', serif;
+  font-weight: 700;
+  background: linear-gradient(to right, #282728, #696969);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

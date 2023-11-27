@@ -32,6 +32,7 @@ export const ARTICLE_QUERY = `
       title
       author
       excerpt
+      category
       publishDate
       postImage { 
         responsiveImage {
