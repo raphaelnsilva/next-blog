@@ -19,7 +19,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
     query: HOMEPAGE_QUERY,
     revalidate: 10
   })
-  
+
   const articles = allArticles
 
   return <Renderer post={post.article} allPosts={articles} />
