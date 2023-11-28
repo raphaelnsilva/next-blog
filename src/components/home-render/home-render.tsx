@@ -4,21 +4,26 @@ import { AllPostsType } from '../../interfaces/types'
 import styles from './home-render.module.css'
 import { FaSearch } from 'react-icons/fa'
 import PostCard from '../post-card/post-card'
+import { FaRegCalendarAlt } from 'react-icons/fa'
 import { Article } from '../../interfaces/types'
 import { BiSolidMessageAltError } from 'react-icons/bi'
 import { IoIosArrowRoundBack } from 'react-icons/io'
+import Link from 'next/link'
+import { Image } from 'react-datocms'
 
 export default function HomeRender({ data }: AllPostsType) {
   const [search, setSearch] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('')
-  const lowerCase = search.toLowerCase()
 
-  const categories = Array.from(
+  const allCategories = Array.from(
     new Set(data.map((post) => post.category.toLowerCase()))
   )
 
   const posts = data.filter((post) => {
-    const titleIncludesSearch = post.title.toLowerCase().includes(lowerCase)
+    const titleIncludesSearch = post.title
+      .toLowerCase()
+      .includes(search.toLowerCase())
+
     const isCategorySelected =
       selectedCategory === '' ||
       post.category.toLowerCase() === selectedCategory.toLowerCase()
@@ -34,6 +39,7 @@ export default function HomeRender({ data }: AllPostsType) {
     <main className={styles.main}>
       <section className={styles.section}>
         <h1 className={styles.header}>Últimas Receitas :</h1>
+        {selectedCategory ? <p>{`Categoria: ${selectedCategory}`}</p> : ''}
         <ul className={styles.allArticles}>
           {posts.length === 0 ? (
             <div className={styles.errorSearch}>
@@ -49,15 +55,22 @@ export default function HomeRender({ data }: AllPostsType) {
             </div>
           ) : (
             posts.map((post: Article) => (
-              <PostCard
-                key={post.slug}
-                title={post.title}
-                excerpt={post.excerpt}
-                publishDate={post.publishDate}
-                slug={post.slug}
-                postImage={post.postImage}
-                category={post.category}
-              />
+              <li className={styles.card} key={post.slug}>
+                <Link href={`/${post.slug}`}>
+                  <div className={styles.cardBox}>
+                    {/* eslint-disable-next-line jsx-a11y/alt-text */}
+                    <Image data={post.postImage.responsiveImage} />
+                    <div className={styles.cardContent}>
+                      <span className={styles.category}>{post.category}</span>
+                      <h1 className={styles.cardTitle}>{post.title}</h1>
+                      <span className={styles.publishData}>
+                        <FaRegCalendarAlt />
+                        Publicado em: {post.publishDate}
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </li>
             ))
           )}
         </ul>
@@ -87,7 +100,7 @@ export default function HomeRender({ data }: AllPostsType) {
           >
             Todas Receitas
           </li>
-          {categories.map((category) => (
+          {allCategories.map((category) => (
             <li
               key={category}
               className={

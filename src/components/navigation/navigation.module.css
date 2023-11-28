@@ -1,3 +1,19 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0;
+} 
+
+.header h1 {
+  font-family: 'Quattrocento', serif;
+  font-weight: 700;
+  background: linear-gradient(to right, #282728, #696969);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .nav {
   position: sticky;
   top: 0px;
@@ -13,8 +29,6 @@
   align-items: center;
   justify-content: space-evenly;
 }
-
-
 
 .brandName {
   display: flex;
