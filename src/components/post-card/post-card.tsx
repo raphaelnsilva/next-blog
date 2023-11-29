@@ -1,28 +1,25 @@
+// PostListpost.js
+import React from 'react'
 import Link from 'next/link'
+import { Image } from 'react-datocms'
 import { FaRegCalendarAlt } from 'react-icons/fa'
 import styles from './post-card.module.css'
-import { Article } from '../../interfaces/types'
-import { Image } from 'react-datocms'
+import { PostTypes } from '../../interfaces/types'
 
-export default function PostCard({
-  title,
-  publishDate,
-  slug,
-  postImage,
-  category
-}: Article) {
+export default function PostCard({ post }: PostTypes) {
+  console.log(post)
   return (
-    <li className={styles.card}>
-      <Link href={`/${slug}`}>
+    <li className={styles.card} key={post.slug}>
+      <Link href={`/${post.slug}`}>
         <div className={styles.cardBox}>
           {/* eslint-disable-next-line jsx-a11y/alt-text */}
-          <Image data={postImage.responsiveImage} />
+          <Image data={post.postImage.responsiveImage} />
           <div className={styles.cardContent}>
-            <span className={styles.category}>{category}</span>
-            <h1 className={styles.cardTitle}>{title}</h1>
+            <span className={styles.category}>{post.category}</span>
+            <h1 className={styles.cardTitle}>{post.title}</h1>
             <span className={styles.publishData}>
               <FaRegCalendarAlt />
-              Publicado em: {publishDate}
+              Publicado em: {post.publishDate}
             </span>
           </div>
         </div>

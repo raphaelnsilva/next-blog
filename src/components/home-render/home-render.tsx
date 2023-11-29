@@ -3,13 +3,14 @@ import { useState } from 'react'
 import { AllPostsType } from '../../interfaces/types'
 import styles from './home-render.module.css'
 import { FaSearch } from 'react-icons/fa'
-import PostCard from '../post-card/post-card'
+// import PostCard from '../post-card/post-card'
 import { FaRegCalendarAlt } from 'react-icons/fa'
 import { Article } from '../../interfaces/types'
 import { BiSolidMessageAltError } from 'react-icons/bi'
 import { IoIosArrowRoundBack } from 'react-icons/io'
 import Link from 'next/link'
 import { Image } from 'react-datocms'
+import PostCard from '../post-card/post-card'
 
 export default function HomeRender({ data }: AllPostsType) {
   const [search, setSearch] = useState('')
@@ -40,7 +41,7 @@ export default function HomeRender({ data }: AllPostsType) {
       <section className={styles.section}>
         <h1 className={styles.header}>Últimas Receitas :</h1>
         {selectedCategory ? <p>{`Categoria: ${selectedCategory}`}</p> : ''}
-        <ul className={styles.allArticles}>
+        <ul className={styles.lastPosts}>
           {posts.length === 0 ? (
             <div className={styles.errorSearch}>
               <BiSolidMessageAltError />
@@ -54,25 +55,34 @@ export default function HomeRender({ data }: AllPostsType) {
               </button>
             </div>
           ) : (
-            posts.map((post: Article) => (
-              <li className={styles.card} key={post.slug}>
-                <Link href={`/${post.slug}`}>
+            posts
+              .slice(0, 5)
+              .map((post: Article) => <PostCard key={post.slug} post={post} />)
+          )}
+        </ul>
+        <h1>Bebidas</h1>
+        <ul className={styles.drinks}>
+          {posts
+            .slice(0, 5)
+            .filter((post: Article) => post.category === 'bebidas')
+            .map((bebida: Article) => (
+              <li className={styles.card} key={bebida.slug}>
+                <Link href={`/${bebida.slug}`}>
                   <div className={styles.cardBox}>
                     {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                    <Image data={post.postImage.responsiveImage} />
+                    <Image data={bebida.postImage.responsiveImage} />
                     <div className={styles.cardContent}>
-                      <span className={styles.category}>{post.category}</span>
-                      <h1 className={styles.cardTitle}>{post.title}</h1>
+                      <span className={styles.category}>{bebida.category}</span>
+                      <h1 className={styles.cardTitle}>{bebida.title}</h1>
                       <span className={styles.publishData}>
                         <FaRegCalendarAlt />
-                        Publicado em: {post.publishDate}
+                        Publicado em: {bebida.publishDate}
                       </span>
                     </div>
                   </div>
                 </Link>
               </li>
-            ))
-          )}
+            ))}
         </ul>
       </section>
       <aside className={styles.aside}>

@@ -15,9 +15,22 @@
   margin: 0.5rem 0;
 }
 
-.allArticles {
+.lastPosts {
+  list-style: none;
   padding: 0;
-  flex: 1;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.drinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .aside {
@@ -119,6 +132,8 @@
 .card {
   list-style: none;
   padding: 20px 0;
+  box-sizing: border-box;
+  width: 100%;
 }
 .cardBox {
   position: relative;
@@ -197,10 +212,9 @@
 }
 @media(min-width: 610px){
   .card {
-    flex: 1 0 calc(50% - 20px);
-    max-width: calc(50% - 20px);
-    box-sizing: border-box;
+    width: calc(50% - 20px);
   }
+
   .cardContent {
     padding: 10px;
   }
@@ -213,15 +227,15 @@
   }
 }
 @media(min-width: 700px){
-  .cardContent {
-    padding: 20px;
-  }
   .cardTitle {
-    font-size: 16px;
+    font-size: 12px;
   }
   .publishData,
   .category {
-    font-size: 14px;
+    font-size: 10px;
+  }
+  .card:nth-child(n+3) {
+    width: calc(33% - 20px);
   }
 }
 @media (min-width: 800px) {
@@ -287,12 +301,6 @@
 }
 
 @media (min-width: 600px) {
-  .allArticles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
   .formSearch {
     width: 45%;
   }

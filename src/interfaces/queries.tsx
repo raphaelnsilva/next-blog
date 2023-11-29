@@ -4,9 +4,7 @@ export const HOMEPAGE_QUERY = `
       slug
       category
       title
-      excerpt
       publishDate
-      author
       postImage { 
         url
         responsiveImage {
@@ -30,8 +28,6 @@ export const ARTICLE_QUERY = `
     article(filter: {slug: {eq: $slug}}) {
       slug
       title
-      author
-      excerpt
       category
       publishDate
       postImage { 

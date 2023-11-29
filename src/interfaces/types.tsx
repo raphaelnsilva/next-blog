@@ -3,7 +3,6 @@ import { ResponsiveImageType } from 'react-datocms'
 export interface Article {
   slug: string
   title: string
-  excerpt: string
   publishDate: string
   category: string
   postImage: {
@@ -26,8 +25,6 @@ export interface AllPostsType {
   data: Array<{
     slug: string
     title: string
-    author: string
-    excerpt: string
     publishDate: string
     category: string
     content: null
@@ -72,9 +69,7 @@ export interface RecordType {
 export interface PostTypes {
   allPosts: Array<{
     slug: string
-    title: string
     author: string
-    excerpt: string
     publishDate: string
     category: string
     content: null
