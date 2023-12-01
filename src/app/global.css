@@ -32,6 +32,9 @@ blockquote::after{
   color: #282728;
   box-sizing: border-box;
 }
+.myMain {
+  
+}
 
 html,
 body {
@@ -89,4 +92,10 @@ pre {
 
 img {
   border-radius: 3px;
+}
+
+@media (min-width: 800px) {
+  .myMain {
+    display: flex;
+  }
 }

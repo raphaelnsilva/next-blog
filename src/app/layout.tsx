@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './global.css'
 import Navigation from '../components/navigation/navigation'
 import Footer from '../components/footer/footer'
+import Search from '../components/search/search'
 
 export const metadata: Metadata = {
   title: 'MundoDev',
@@ -17,7 +18,10 @@ export default async function RootLayout({
     <html lang='pt-br'>
       <body suppressHydrationWarning={true}>
         <Navigation />
-        {children}
+        <main className='myMain'>
+          {children}
+          <Search />
+        </main>
         <Footer />
       </body>
     </html>
