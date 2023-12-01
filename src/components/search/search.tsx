@@ -20,13 +20,10 @@ const Search = () => {
     }
   }, [router, query])
 
-  console.log(query)
-
   useEffect(() => {
     if (!category) {
       router.push('/')
     } else {
-      setSearchQuery('')
       router.push(`/category?query=${category}`)
     }
   }, [router, category])
@@ -35,7 +32,7 @@ const Search = () => {
 
   return (
     <aside className={styles.aside}>
-      <form onSubmit={(e) => e.preventDefault()} className={styles.formSearch}>
+      <form className={styles.formSearch} onSubmit={(e) => e.preventDefault()}>
         <input
           className={styles.inputSearch}
           type='search'
@@ -43,7 +40,6 @@ const Search = () => {
           placeholder=' pesquise por receitas...'
           name='search'
           onChange={(e) => {
-            e.preventDefault()
             setSearchQuery(e.target.value)
           }}
         />
@@ -56,7 +52,7 @@ const Search = () => {
           className={styles.li}
           onClick={(e) => {
             e.preventDefault()
-            setCategoryQuery(e.target.value)
+            setCategoryQuery('')
           }}
           value={''}
         >
@@ -69,14 +65,6 @@ const Search = () => {
           }}
         >
           Bebidas
-        </li>
-        <li
-          className={styles.li}
-          onClick={() => {
-            setCategoryQuery('receitas doces')
-          }}
-        >
-          Receitas doces
         </li>
       </ul>
     </aside>
