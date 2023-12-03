@@ -37,7 +37,6 @@ interface Types {
 }
 
 export default async function Post({ params }: { params: { slug: string } }) {
-  console.log(params)
   const ARTICLE_QUERY = `
     query Query {
       article(filter: {slug: {eq: "${params.slug}"}}) {
@@ -91,7 +90,6 @@ export default async function Post({ params }: { params: { slug: string } }) {
   })
 
   const article: Types = response.article
-  // console.log(article.content.value.document.children)
 
   return (
     <>
