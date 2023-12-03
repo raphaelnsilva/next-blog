@@ -1,16 +1,17 @@
 'use client'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { useDebounce } from 'use-debounce'
-import styles from './search.module.css'
+import styles from './search-input.module.css'
 import { FaSearch } from 'react-icons/fa'
 
-const Search = () => {
+const SearchInput = () => {
   const [searchQuery, setSearchQuery] = useState('')
-  const [categoryQuery, setCategoryQuery] = useState('')
   const router = useRouter()
+  const pathname = usePathname()
   const [query] = useDebounce(searchQuery, 500)
-  const [category] = useDebounce(categoryQuery, 500)
+
+  console.log(pathname)
 
   useEffect(() => {
     if (!query) {
@@ -19,16 +20,6 @@ const Search = () => {
       router.push(`/search?query=${query}`)
     }
   }, [router, query])
-
-  useEffect(() => {
-    if (!category) {
-      router.push('/')
-    } else {
-      router.push(`/category?query=${category}`)
-    }
-  }, [router, category])
-
-  console.log(category)
 
   return (
     <aside className={styles.aside}>
@@ -47,28 +38,8 @@ const Search = () => {
           <FaSearch />
         </button>
       </form>
-      <ul>
-        <li
-          className={styles.li}
-          onClick={(e) => {
-            e.preventDefault()
-            setCategoryQuery('')
-          }}
-          value={''}
-        >
-          Todas as receitas
-        </li>
-        <li
-          className={styles.li}
-          onClick={() => {
-            setCategoryQuery('bebidas')
-          }}
-        >
-          Bebidas
-        </li>
-      </ul>
     </aside>
   )
 }
 
-export default Search
+export default SearchInput

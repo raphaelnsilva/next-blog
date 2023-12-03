@@ -60,7 +60,6 @@ export default async function Search({
   })
 
   const articles = response.allArticles
-  console.log(articles)
 
   return (
     <ul className={styles.ul}>

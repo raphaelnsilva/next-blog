@@ -12,10 +12,11 @@ export default async function Category({
 }) {
   const category =
     typeof searchParams.query === 'string' ? searchParams.query : undefined
+  console.log(category)
 
   const CATEGORY_QUERY = `
     query MyQuery {
-      allArticles(filter: {category: {eq: "${category}"}}) {
+      allArticles(filter: {category: {eq: "bebidas"}}) {
         title
         slug
         category
