@@ -1,0 +1,17 @@
+.ul {
+  list-style: none;
+  padding: 1rem;
+  box-shadow: 0 0 10px #00000034;
+}
+
+.ul h1 {
+  color: #a33708;
+}
+
+.li {
+  list-style: none;
+  font-size: 16px;
+  padding: 1rem 0;
+  font-weight: 600;
+  border-bottom: 1px solid #a33708;
+}

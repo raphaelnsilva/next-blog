@@ -1,11 +1,18 @@
 import { performRequest } from '@/lib/datocms'
 import styles from './category.module.css'
+import Link from 'next/link'
+
+interface Types {
+  id: string
+  category: string
+}
 
 export default async function Category() {
   const CATEGORIES = `
     query MyQuery {
       allArticles {
         category
+        id
       }
     }
   `
@@ -14,19 +21,25 @@ export default async function Category() {
     revalidate: 10,
     visualEditingBaseUrl: false
   })
-  // const categories = new Set(
-  //   response.allArticles.map(
-  //     (article: { category: string }) => article.category
-  //   )
-  // )
 
-  console.log(response)
+  const categoriesSet = new Set<string>()
+  response.allArticles.forEach(({ category }: Types) => {
+    categoriesSet.add(category)
+  })
+
+  const categoriesList = Array.from(categoriesSet)
+
   return (
-    <ul>
-      {/* {categories.map((categorie) => (
-        // eslint-disable-next-line react/jsx-key
-        <li>{categorie}</li>
-      ))} */}
+    <ul className={styles.ul}>
+      <h1>Categorias</h1>
+      <li className={styles.li}>
+        <Link href={'/'}>Todas as receitas</Link>
+      </li>
+      {categoriesList.map((category) => (
+        <li key={category} className={styles.li}>
+          <Link href={`/category?query=${category}`}>{category}</Link>
+        </li>
+      ))}
     </ul>
   )
 }

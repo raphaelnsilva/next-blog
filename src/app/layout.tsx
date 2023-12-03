@@ -19,11 +19,13 @@ export default async function RootLayout({
     <html lang='pt-br'>
       <body suppressHydrationWarning={true}>
         <Navigation />
-        <aside className='myMain'>
+        <main className='myMain'>
           {children}
-          <SearchInput />
-          <Category />
-        </aside>
+          <aside className='myAside'>
+            <SearchInput />
+            <Category />
+          </aside>
+        </main>
         <Footer />
       </body>
     </html>

@@ -32,8 +32,9 @@ blockquote::after{
   color: #282728;
   box-sizing: border-box;
 }
-.myMain {
-  
+
+.myAside {
+  margin: 1rem 0 1rem 1rem;
 }
 
 html,
