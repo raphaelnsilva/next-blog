@@ -29,7 +29,6 @@ export default async function Category({
   })
 
   const articles = response.allArticles
-  console.log(articles)
 
   return (
     <div>

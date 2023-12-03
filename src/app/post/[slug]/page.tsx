@@ -10,46 +10,37 @@ export const metadata: Metadata = {
 }
 
 interface Types {
-  params: {
-    slug: string
-  }
-
-  article: {
-    slug: string
-    title: string
-    category: string
-    publishDate: string
-    postImage: { responsiveImage: ResponsiveImageType }
-    content: {
-      value: object
-      blocks: object
-    }
-  }
-
   responsiveImage: ResponsiveImageType
-  record: {
-    __typename: string
-    id: string
-    image: {
-      responsiveImage: {
-        width: number
-        webpSrcSet: string
-        srcSet: string
-        src: string
-        sizes: string
-        height: number
-        bgColor: string
-        base64: string
-        aspectRatio: number
+  slug: string
+  title: string
+  category: string
+  publishDate: string
+  postImage: { responsiveImage: ResponsiveImageType }
+  content: {
+    value: {
+      schema: 'dast'
+      document: {
+        type: 'root'
+        children: []
       }
     }
+    blocks: [
+      {
+        __typename: string
+        id: string
+        image: {
+          responsiveImage: ResponsiveImageType
+        }
+      }
+    ]
   }
 }
 
-export default async function Post({ params }: Types) {
+export default async function Post({ params }: { params: { slug: string } }) {
+  console.log(params)
   const ARTICLE_QUERY = `
-    query Query($slug: String)  {
-      article(filter: {slug: {eq: $slug}}) {
+    query Query {
+      article(filter: {slug: {eq: "${params.slug}"}}) {
         slug
         title
         category
@@ -95,19 +86,18 @@ export default async function Post({ params }: Types) {
 
   const response = await performRequest({
     query: ARTICLE_QUERY,
-    variables: { slug: params.slug },
     revalidate: 10,
     visualEditingBaseUrl: false
   })
 
-  const article = response.article
+  const article: Types = response.article
+  // console.log(article.content.value.document.children)
 
   return (
     <>
       <main className={styles.postContent}>
         <article>
           <h1 className={styles.postTitle}>{article.title}</h1>
-          {/* <p>{post.excerpt}</p> */}
           <div className={styles.metaData}>
             <span className={styles.postDate}>
               <FaRegCalendarAlt />
@@ -119,10 +109,9 @@ export default async function Post({ params }: Types) {
           <Image data={article.postImage.responsiveImage} />
           <StructuredText
             data={article.content}
-            renderBlock={(context) => {
-              const imageRecord = context.record.image as Types
+            renderBlock={({ record }) => {
               // eslint-disable-next-line jsx-a11y/alt-text
-              return <Image data={imageRecord.responsiveImage} />
+              return <Image data={record.image.responsiveImage} />
             }}
           />
         </article>
