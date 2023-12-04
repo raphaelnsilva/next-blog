@@ -63,5 +63,10 @@ img {
 @media (min-width: 800px) {
   .myMain {
     display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .myAside {
+    flex: 2.5;
   }
 }

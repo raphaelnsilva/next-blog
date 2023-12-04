@@ -35,6 +35,17 @@ export default function Header() {
               Sobre nós
             </li>
           </Link>
+          <Link href='/contact'>
+            <li
+              className={
+                pathName === '/contact'
+                  ? `${styles.navLinksActive}`
+                  : styles.navLinks
+              }
+            >
+              Contatos
+            </li>
+          </Link>
         </ul>
       </nav>
     </>

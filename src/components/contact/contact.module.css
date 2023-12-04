@@ -1,0 +1,64 @@
+.sectionContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 7.5;
+  margin: 1rem 0;
+  padding: 1rem 0;
+}
+
+.myForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #F7F7F7;
+  box-shadow: 0 0 2px #00000040;
+  padding: 1.5rem;
+}
+
+.myInput {
+  display: flex;
+  flex-direction: column;
+}
+
+.myInput input {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+.myInput textarea {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+.errorContainer {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #F7F7F7;
+  box-shadow: 0 0 2px #00000040;
+}
+
+.errorMessage {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #F7F7F7;
+  box-shadow: 0 0 2px #00000040;
+  color: red;
+}
+
+.successMessage {
+  background-color: #F7F7F7;
+  box-shadow: 0 0 2px #00000040;
+  padding: 1rem;
+  margin: 1rem 0;
+  color: green;
+}
+
+.myBtn {
+  padding: 0.5rem;
+  background-color: #a33709;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+}
+

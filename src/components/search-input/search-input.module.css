@@ -39,21 +39,9 @@
   color: #fff;
 }
 
-@media (min-width: 600px) {
-  .formSearch {
-    width: 45%;
-  }
-}
-
-
 @media (min-width: 800px) {
   .formSearch {
-    width: 100%;
-  }
-
-  .aside {
     position: sticky;
     top: 60px;
-    flex: 2;
   }
 }

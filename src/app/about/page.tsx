@@ -3,12 +3,45 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Sobre | MundoDev'
+  title: 'Sobre | Receitas da dona Maria'
 }
 
 export default function About() {
   return (
-    <main className={styles.aboutContainer}>
+    <article className={styles.aboutContainer}>
+      <section>
+        <h1>Sobre nosso Blog</h1>
+        <p>
+          Blog foi concebido com o propósito de compartilhar experiências
+          culinárias e deliciosas receitas. Aqui, compartilhamos artigos que
+          abordam uma variedade de tópicos relacionados à gastronomia e ao
+          prazer de cozinhar em geral. Nossa marca e nossas postagens não são de
+          forma alguma influenciadas por preferências culinárias específicas ou
+          tendências alimentares.
+        </p>
+        <p>
+          Este blog utiliza uma plataforma avançada e foi projetado para ser
+          acessível por qualquer tipo de dispositivo. Foi construído com foco na
+          praticidade e em proporcionar uma experiência positiva para o usuário
+          na busca por receitas irresistíveis. Nossas receitas são elaboradas
+          manualmente, sem o uso de inteligência artificial. Acreditamos que as
+          instruções e dicas compartilhadas aqui devem ser claras e de fácil
+          execução para cozinheiros de todos os níveis e para qualquer pessoa
+          interessada em explorar o mundo da culinária.
+        </p>
+        <p>
+          Nosso compromisso se estende à qualidade do conteúdo publicado.
+          Estamos constantemente aprimorando nossas receitas e compartilhando
+          truques culinários para manter nossos leitores inspirados na cozinha.
+          Compartilhando conhecimento de forma transparente, estamos
+          contribuindo para a promoção da culinária e incentivando pessoas de
+          todos os níveis a se aventurarem na cozinha com confiança e
+          entusiasmo. Agradecemos a você por fazer parte dessa jornada e
+          esperamos que encontre nosso blog uma fonte valiosa de inspiração
+          culinária.
+        </p>
+        <h1>Continue explorando nossas receitas</h1>
+      </section>
       <div className={styles.teste}>
         <h1>
           As melhores receitas <br /> em um só lugar
@@ -22,35 +55,6 @@ export default function About() {
           </Link>
         </ul>
       </div>
-      <div>
-        <p>
-          blog foi concebido com o propósito de compatilhar conhecimentos na
-          área da tecnologia. Aqui, compartilhamos artigos abordando uma
-          variedade de tópicos relacionados a tecnologias e empreendedorismo em
-          geral. Nossa marca e nossas postagens não são de forma alguma
-          influenciadas por qualquer partido político.
-        </p>
-        <p>
-          Este blog utiliza um framework avançado e foi projetado para ser
-          acessível por qualquer tipo de dispositivo. Foi construído com foco na
-          velocidade e em proporcionar uma experiência positiva para o usuário.
-          Nossos artigos são elaborados manualmente, sem o uso de inteligência
-          artificial. Acreditamos que o conhecimento transmitido aqui deve ser
-          claro e de fácil compreensão para programadores de todos os níveis e
-          para qualquer pessoa interessada.
-        </p>
-        <p>
-          Nosso compromisso se estende à qualidade do conteúdo publicado.
-          constantemente aprofundar nossa pesquisa e manter nossos leitores
-          atualizados com as informações mais recentes. Compartilhando
-          conhecimento de forma transparente, estamos contribuindo para a
-          promoção promoção promoção da educação tecnológica e do
-          empreendedorismo, capacitando indivíduos de todos os níveis a explorar
-          o mundo da tecnologia com confiança e entusiasmo. Agradecemos a você
-          parte dessa jornada e esperamos que encontre nosso blog uma valiosa
-          inspiração.
-        </p>
-      </div>
-    </main>
+    </article>
   )
 }

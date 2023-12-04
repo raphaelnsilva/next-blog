@@ -5,6 +5,7 @@ import styles from './page.module.css'
 import { Image } from 'react-datocms'
 import { FaRegCalendarAlt } from 'react-icons/fa'
 import { ResponsiveImageType } from 'react-datocms'
+import { BiSolidMessageAltError } from 'react-icons/bi'
 
 export const metadata: Metadata = {
   title: 'Pesquisa'
@@ -62,9 +63,12 @@ export default async function Search({
   const articles = response.allArticles
 
   return (
-    <ul className={styles.ul}>
+    <ul className={styles.lastsPosts}>
       {articles.length === 0 ? (
-        <h1>Desculpe, não encotramos sua pesquisa</h1>
+        <div className={styles.errorMessage}>
+          <BiSolidMessageAltError />
+          <h1>Desculpe, não encotramos sua pesquisa =( </h1>
+        </div>
       ) : (
         articles.map((article: Article) => (
           <li className={styles.card} key={article.slug}>

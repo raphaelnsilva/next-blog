@@ -17,21 +17,23 @@ const SearchInput = () => {
   }, [router, searchQuery])
 
   return (
-    <form className={styles.formSearch} onSubmit={(e) => e.preventDefault()}>
-      <input
-        className={styles.inputSearch}
-        type='search'
-        value={searchQuery}
-        placeholder=' pesquise por receitas...'
-        name='search'
-        onChange={(e) => {
-          setSearchQuery(e.target.value)
-        }}
-      />
-      <button type='submit' className={styles.btnSearch}>
-        <FaSearch />
-      </button>
-    </form>
+    <>
+      <form className={styles.formSearch} onSubmit={(e) => e.preventDefault()}>
+        <input
+          className={styles.inputSearch}
+          type='search'
+          value={searchQuery}
+          placeholder=' pesquise por receitas...'
+          name='search'
+          onChange={(e) => {
+            setSearchQuery(e.target.value)
+          }}
+        />
+        <button type='submit' className={styles.btnSearch}>
+          <FaSearch />
+        </button>
+      </form>
+    </>
   )
 }
 

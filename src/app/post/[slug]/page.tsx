@@ -6,7 +6,7 @@ import { FaRegCalendarAlt } from 'react-icons/fa'
 import { Image, StructuredText } from 'react-datocms'
 
 export const metadata: Metadata = {
-  title: 'Post'
+  title: `Post | Receitas da dona Maria`
 }
 
 interface Types {
