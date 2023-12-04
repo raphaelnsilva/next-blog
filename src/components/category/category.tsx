@@ -3,7 +3,6 @@ import styles from './category.module.css'
 import Link from 'next/link'
 
 interface Types {
-  id: string
   category: string
 }
 
@@ -12,7 +11,6 @@ export default async function Category() {
     query MyQuery {
       allArticles {
         category
-        id
       }
     }
   `
@@ -32,13 +30,13 @@ export default async function Category() {
   return (
     <ul className={styles.ul}>
       <h1>Categorias</h1>
-      <li className={styles.li}>
-        <Link href={'/'}>Todas as receitas</Link>
-      </li>
+      <Link href='/'>
+        <li className={styles.li}>Todas as receitas</li>
+      </Link>
       {categoriesList.map((category) => (
-        <li key={category} className={styles.li}>
-          <Link href={`/category?query=${category}`}>{category}</Link>
-        </li>
+        <Link key={category} href={`/category?query=${category}`}>
+          <li className={styles.li}>{category}</li>
+        </Link>
       ))}
     </ul>
   )

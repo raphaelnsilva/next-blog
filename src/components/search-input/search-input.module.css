@@ -1,8 +1,11 @@
 .formSearch {
   display: flex;
   padding: 1rem;
-  box-shadow: 0 0 10px #00000034;
+  box-shadow: 0 0 4px #00000040;
+  background-color: #f7f7f7;
   flex: 2;
+  position: sticky;
+  top: 60px;
 }
 
 .inputSearch {
