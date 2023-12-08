@@ -2,32 +2,47 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.5rem 0;
-  padding: 0.5rem 0;
+  margin: 0;
+  padding: 1rem 0;
+  background-color: var(--background);
 } 
 
 .header h1 {
-  font-family: 'Quattrocento', serif;
-  font-weight: 700;
-  background: linear-gradient(to right, #282728, #696969);
+  font-size: 1rem;
+  margin: 1rem;
+  font-weight: 900;
+  background: linear-gradient( #282728, #696969);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.header img {
+  font-size: 1rem;
 }
 
 .nav {
   position: sticky;
   top: 0px;
-  background: #a33709;
+  background-color: var(--background);
+  border-bottom: 1px solid var(--yellowcolor);
   z-index: 1000;
+  width: 100%;
+}
+
+.nav li {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.7rem;
 }
 
 .navMenu {
   list-style: none;
-  padding: 10px;
   margin: 0;
+  padding: 0;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 2rem;
+  height: 4rem;
 }
 
 .brandName {
@@ -35,20 +50,18 @@
 }
 
 .navLinks {
-  color: #fff;
-  font-weight: 500;
+  color: var(--blackcolor);
 }
 
 .navLinksActive {
-  border-bottom: 1px solid #fff;
-  color: #fff;
-  font-weight: 500;
-  
+  color: var(--strongblue);
+  font-weight: 600;
+  border-bottom: 1px solid var(--strongblue);
 }
 
-@media (min-width: 350px) {
+@media (min-width: 400px) {
   .nav li {
-    font-size: 18px;
+    font-size: 1rem;
   }
 }
 

@@ -1,20 +1,18 @@
-
-
 .header {
-  font-weight: 300;
-  font-family: 'Frank Ruhl Libre', serif;
-  border-bottom: 1px solid var(--yellowcolor);
+  border-bottom: 2px solid var(--yellowcolor);
   padding: 0.5rem 0;
   max-width: 400px;
   font-size: 20px;
   margin: 0.5rem 0;
+  font-weight: 300;
+  font-family: 'Frank Ruhl Libre', serif;
 }
 
 .lastsPosts {
   padding: 0;
 }
 
-/* .card {
+.card {
   list-style: none;
   padding: 20px 0;
 }
@@ -22,7 +20,7 @@
 .cardBox {
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 5px #00000060;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
 
@@ -70,57 +68,7 @@
 
 .publishData path {
   color: #ffffff9f;
-} */
-
-
-.card {
-  list-style: none;
-  padding: 20px 0;
 }
-
-.cardBox {
-  position: relative;
-  overflow: hidden;
-  background-color: var(--background);
-}
-
-.cardBox img {
-  border-radius: 0;
-}
-
-.cardContent {
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.category {
-  /* padding: 0.2rem 1rem;
-  background-color: rgb(0, 156, 63); */
-  /* border-radius: 5px; */
-  font-weight: 600;
-  color: var(--browncolor);
-  font-size: 10px;
-}
-
-.cardTitle {
-  margin: 0;
-  font-size: 18px;
-  margin: 1rem 0;
-  font-family: 'Frank Ruhl Libre', serif;
-}
-
-.publishData {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-style: italic;
-  font-size: 10px;
-}
-
-.publishData path {
-  color: var(--strongblue);
-} 
-
 
 @media (min-width: 300px) {
   .cardTitle {

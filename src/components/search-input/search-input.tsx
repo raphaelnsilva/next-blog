@@ -17,7 +17,8 @@ const SearchInput = () => {
   }, [router, searchQuery])
 
   return (
-    <>
+    <div className={styles.container}>
+      <h1>PESQUISAR</h1>
       <form className={styles.formSearch} onSubmit={(e) => e.preventDefault()}>
         <input
           className={styles.inputSearch}
@@ -33,7 +34,7 @@ const SearchInput = () => {
           <FaSearch />
         </button>
       </form>
-    </>
+    </div>
   )
 }
 

@@ -10,8 +10,8 @@ export default function Header() {
   return (
     <>
       <header className={styles.header}>
-        <Image src='/brand.png' alt={'brand'} width={100} height={100} />
-        <h1>Receitas Da Dona Maria</h1>
+        <Image src='/brand.png' alt={'brand'} width={80} height={80} />
+        <h1>Mundo Da Cozinha</h1>
       </header>
       <nav className={styles.nav}>
         <ul className={styles.navMenu}>
@@ -21,7 +21,18 @@ export default function Header() {
                 pathName === '/' ? `${styles.navLinksActive}` : styles.navLinks
               }
             >
-              Home
+              HOME
+            </li>
+          </Link>
+          <Link href='/posts'>
+            <li
+              className={
+                pathName === '/posts'
+                  ? `${styles.navLinksActive}`
+                  : styles.navLinks
+              }
+            >
+              POSTS
             </li>
           </Link>
           <Link href='/about'>
@@ -32,7 +43,7 @@ export default function Header() {
                   : styles.navLinks
               }
             >
-              Sobre nós
+              SOBRE NÓS
             </li>
           </Link>
           <Link href='/contact'>
@@ -43,7 +54,7 @@ export default function Header() {
                   : styles.navLinks
               }
             >
-              Contatos
+              CONTATOS
             </li>
           </Link>
         </ul>

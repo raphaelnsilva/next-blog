@@ -29,7 +29,7 @@ export default async function Category() {
 
   return (
     <ul className={styles.ul}>
-      <h1>Categorias</h1>
+      <h1>CATEGORIAS</h1>
       <Link href='/'>
         <li className={styles.li}>Todas as receitas</li>
       </Link>

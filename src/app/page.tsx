@@ -46,6 +46,7 @@ export default async function Home() {
       }
     }
   `
+
   const homepageQuery = await performRequest({
     query: HOMEPAGE_QUERY,
     revalidate: 60,
@@ -61,6 +62,7 @@ export default async function Home() {
       }
     }
   `
+
   const response = await performRequest({
     query: CATEGORIES_QUERY,
     revalidate: 10,
@@ -74,15 +76,13 @@ export default async function Home() {
 
   const categoriesList = Array.from(categoriesSet)
 
-  console.log(categoriesList)
-
   return (
     <section className={styles.section}>
       <h1 className={styles.header}>Últimas Receitas</h1>
       <ul className={styles.lastsPosts}>
         {allArticles.slice(0, 5).map((article: Articles) => (
           <li className={styles.card} key={article.slug}>
-            <Link href={`/post/${article.slug}`}>
+            <Link href={`/posts/${article.slug}`}>
               <div className={styles.cardBox}>
                 {/* eslint-disable-next-line jsx-a11y/alt-text */}
                 <Image data={article.postImage.responsiveImage} />
