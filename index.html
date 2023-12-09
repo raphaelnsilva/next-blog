@@ -1,62 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div com Links e Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      grid-gap: 16px;
-    }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 20px auto;
+        }
 
-    li {
-      background-color: #f0f0f0;
-      padding: 16px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+        .card {
+            width: 48%; /* 48% para garantir que haja espaço suficiente entre os cards */
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
 
-    li:nth-child(3) {
-      grid-column: span 2; /* Ocupa duas colunas */
-    }
+        .card img {
+            width: 50%;
+            float: left;
+            margin: 0;
+        }
 
-    @media (max-width: 600px) {
-      li {
-        grid-column: span 2;
-      }
+        .card h1 {
+            width: 50%;
+            float: left;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-      li:nth-child(3) {
-        grid-column: span 1; /* Em telas menores, ocupa apenas uma coluna */
-      }
-    }
-  </style>
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
 
-  <ul>
-    <li>
-      <h2>Card 1</h2>
-      <p>Conteúdo do Card 1.</p>
-    </li>
-    <li>
-      <h2>Card 2</h2>
-      <p>Conteúdo do Card 2.</p>
-    </li>
-    <li>
-      <h2>Card 3</h2>
-      <p>Conteúdo do Card 3.</p>
-    </li>
-  </ul>
+    <div class="card-container">
+        <a href="#" class="card">
+            <img src="imagem1.jpg" alt="Imagem 1">
+            <h1>Título do Card 1</h1>
+        </a>
+
+        <a href="#" class="card">
+            <img src="imagem2.jpg" alt="Imagem 2">
+            <h1>Título do Card 2</h1>
+        </a>
+
+        <!-- Adicione mais cards conforme necessário -->
+    </div>
 
 </body>
 </html>

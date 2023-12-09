@@ -58,7 +58,10 @@ export default async function Posts() {
           href={`/posts/${article.slug}`}
         >
           {/* eslint-disable-next-line jsx-a11y/alt-text */}
-          <Image data={article.postImage.responsiveImage} />
+          <Image
+            className={styles.myImage}
+            data={article.postImage.responsiveImage}
+          />
           <div className={styles.cardContent}>
             <span className={styles.category}>{article.category}</span>
             <h1 className={styles.cardTitle}>{article.title}</h1>
