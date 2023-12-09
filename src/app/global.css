@@ -79,31 +79,17 @@ img {
   border-radius: 3px;
 }
 
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0.5rem 0;
-  padding: 0.5rem 0;
-} 
-
-.header h1 {
-  margin: 1rem;
-  font-weight: 900;
-  background: linear-gradient( #282728, #696969);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-
 @media (min-width: 800px) {
   .myMain {
     display: flex;
     justify-content: center;
     gap: 1rem;
   }
+  .children {
+    flex: 7;
+  }
   .myAside {
-    flex: 2.5;
+    flex: 3;
     margin: 1rem 0;
   }
 }

@@ -51,26 +51,24 @@ export default async function Posts() {
   return (
     <section className={styles.section}>
       <h1 className={styles.header}>Todas as receitas</h1>
-      <ul clwassName={styles.lastsPosts}>
-        {articles.map((article: Articles) => (
-          <li className={styles.card} key={article.slug}>
-            <Link href={`/posts/${article.slug}`}>
-              <div className={styles.cardBox}>
-                {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                <Image data={article.postImage.responsiveImage} />
-                <div className={styles.cardContent}>
-                  <span className={styles.category}>{article.category}</span>
-                  <h1 className={styles.cardTitle}>{article.title}</h1>
-                  <span className={styles.publishData}>
-                    <FaRegCalendarAlt />
-                    Publicado em: {article.publishDate}
-                  </span>
-                </div>
-              </div>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {articles.map((article: Articles) => (
+        <Link
+          className={styles.cardLink}
+          key={article.slug}
+          href={`/posts/${article.slug}`}
+        >
+          {/* eslint-disable-next-line jsx-a11y/alt-text */}
+          <Image data={article.postImage.responsiveImage} />
+          <div className={styles.cardContent}>
+            <span className={styles.category}>{article.category}</span>
+            <h1 className={styles.cardTitle}>{article.title}</h1>
+            <span className={styles.publishData}>
+              <FaRegCalendarAlt />
+              Publicado em: {article.publishDate}
+            </span>
+          </div>
+        </Link>
+      ))}
     </section>
   )
 }

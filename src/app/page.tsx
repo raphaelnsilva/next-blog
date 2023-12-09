@@ -65,7 +65,7 @@ export default async function Home() {
 
   const response = await performRequest({
     query: CATEGORIES_QUERY,
-    revalidate: 10,
+    revalidate: 60,
     visualEditingBaseUrl: false
   })
 
@@ -77,60 +77,61 @@ export default async function Home() {
   const categoriesList = Array.from(categoriesSet)
 
   return (
-    <section className={styles.section}>
+    <>
       <h1 className={styles.header}>Últimas Receitas</h1>
-      <ul className={styles.lastsPosts}>
-        {allArticles.slice(0, 5).map((article: Articles) => (
-          <li className={styles.card} key={article.slug}>
-            <Link href={`/posts/${article.slug}`}>
-              <div className={styles.cardBox}>
-                {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                <Image data={article.postImage.responsiveImage} />
-                <div className={styles.cardContent}>
-                  <span className={styles.category}>{article.category}</span>
-                  <h1 className={styles.cardTitle}>{article.title}</h1>
-                  <span className={styles.publishData}>
-                    <FaRegCalendarAlt />
-                    Publicado em: {article.publishDate}
-                  </span>
-                </div>
-              </div>
-            </Link>
-          </li>
+      <section className={styles.section}>
+        {allArticles.slice(0, 3).map((article: Articles) => (
+          <Link
+            className={styles.cardLink}
+            key={article.slug}
+            href={`/posts/${article.slug}`}
+          >
+            {/* eslint-disable-next-line jsx-a11y/alt-text */}
+            <Image data={article.postImage.responsiveImage} />
+            <div className={styles.cardContent}>
+              <span className={styles.category}>{article.category}</span>
+              <h1 className={styles.cardTitle}>{article.title}</h1>
+              <span className={styles.publishData}>
+                <FaRegCalendarAlt />
+                Publicado em: {article.publishDate}
+              </span>
+            </div>
+          </Link>
         ))}
-      </ul>
+      </section>
       {categoriesList.map((category) => (
         <>
-          <h1 className={styles.header}>Categoria: {category}</h1>
-          <ul className={styles.lastsPosts}>
+          <h1 key={category} className={styles.header}>
+            Categoria: {category}
+          </h1>
+          <section key={category} className={styles.section}>
             {allArticles
+              .slice(0, 3)
               .filter(
                 (currentCategory: { category: string }) =>
                   currentCategory.category === `${category}`
               )
               .map((article: Articles) => (
-                <li className={styles.card} key={article.slug}>
-                  <Link href={`/post/${article.slug}`}>
-                    <div className={styles.cardBox}>
-                      {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                      <Image data={article.postImage.responsiveImage} />
-                      <div className={styles.cardContent}>
-                        <span className={styles.category}>
-                          {article.category}
-                        </span>
-                        <h1 className={styles.cardTitle}>{article.title}</h1>
-                        <span className={styles.publishData}>
-                          <FaRegCalendarAlt />
-                          Publicado em: {article.publishDate}
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                </li>
+                <Link
+                  className={styles.cardLink}
+                  key={article.slug}
+                  href={`/posts/${article.slug}`}
+                >
+                  {/* eslint-disable-next-line jsx-a11y/alt-text */}
+                  <Image data={article.postImage.responsiveImage} />
+                  <div className={styles.cardContent}>
+                    <span className={styles.category}>{article.category}</span>
+                    <h1 className={styles.cardTitle}>{article.title}</h1>
+                    <span className={styles.publishData}>
+                      <FaRegCalendarAlt />
+                      Publicado em: {article.publishDate}
+                    </span>
+                  </div>
+                </Link>
               ))}
-          </ul>
+          </section>
         </>
       ))}
-    </section>
+    </>
   )
 }

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 16px;
+    }
+
+    li {
+      background-color: #f0f0f0;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    li:nth-child(3) {
+      grid-column: span 2; /* Ocupa duas colunas */
+    }
+
+    @media (max-width: 600px) {
+      li {
+        grid-column: span 2;
+      }
+
+      li:nth-child(3) {
+        grid-column: span 1; /* Em telas menores, ocupa apenas uma coluna */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <ul>
+    <li>
+      <h2>Card 1</h2>
+      <p>Conteúdo do Card 1.</p>
+    </li>
+    <li>
+      <h2>Card 2</h2>
+      <p>Conteúdo do Card 2.</p>
+    </li>
+    <li>
+      <h2>Card 3</h2>
+      <p>Conteúdo do Card 3.</p>
+    </li>
+  </ul>
+
+</body>
+</html>

@@ -17,7 +17,6 @@ const Breadcrumb = ({
   capitalizeLinks
 }: TBreadCrumbProps) => {
   const paths = usePathname().toUpperCase()
-  console.log(paths)
   const pathNames = paths.split('/').filter((path) => path)
   const pathNamesReplaced = pathNames.map((path) => path.replace(/-/g, ' '))
 

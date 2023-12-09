@@ -26,7 +26,7 @@ export default async function RootLayout({
           capitalizeLinks
         />
         <main className='myMain'>
-          {children}
+          <div className='children'>{children}</div>
           <aside className='myAside'>
             <SearchInput />
             <Category />

@@ -40,8 +40,7 @@
   padding: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
+  justify-content: space-evenly;
   height: 4rem;
 }
 
@@ -62,6 +61,13 @@
 @media (min-width: 400px) {
   .nav li {
     font-size: 1rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .navMenu {
+    justify-content: center;
+    gap: 3rem;
   }
 }
 
