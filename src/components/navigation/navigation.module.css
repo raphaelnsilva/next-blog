@@ -1,17 +1,23 @@
 .header {
   display: flex;
   justify-content: center;
+  gap: 1rem;
   align-items: center;
   margin: 0;
   padding: 1rem 0;
   background-color: var(--background);
 } 
 
+.header img {
+  height: 60px;
+  width: 60px;
+}
+
 .header h1 {
-  font-size: 1rem;
-  margin: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
   font-weight: 900;
-  background: linear-gradient( #282728, #696969);
+  background: linear-gradient(to right, #282728, #696969);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -62,12 +68,26 @@
   .nav li {
     font-size: 1rem;
   }
+  .header img {
+    height: 70px;
+    width: 70px;
+  }
+  .header h1 {
+    font-size: 1.5rem;
+  }
 }
 
 @media (min-width: 600px) {
   .navMenu {
     justify-content: center;
     gap: 3rem;
+  }
+  .header img {
+    height: 80px;
+    width: 80px;
+  }
+  .header h1 {
+    font-size: 2rem;
   }
 }
 
