@@ -25,6 +25,7 @@ export default function Contact() {
     })
 
     const { msg, success } = await res.json()
+    console.log(msg)
     setError(msg)
     setSuccess(success)
     if (success) {

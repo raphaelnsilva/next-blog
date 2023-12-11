@@ -1,3 +1,10 @@
+.loading {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .header {
   border-bottom: 2px solid var(--yellowcolor);
   padding: 0.5rem 0;
