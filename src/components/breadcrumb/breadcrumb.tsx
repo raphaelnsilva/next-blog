@@ -21,7 +21,7 @@ const Breadcrumb = ({
   const pathNamesReplaced = pathNames.map((path) => path.replace(/-/g, ' '))
 
   return (
-    <>
+    <div className={styles.container}>
       {paths === '/' ? (
         ''
       ) : (
@@ -50,7 +50,7 @@ const Breadcrumb = ({
           })}
         </ul>
       )}
-    </>
+    </div>
   )
 }
 

@@ -10,8 +10,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: #F7F7F7;
-  box-shadow: 0 0 2px #00000040;
+  background-color: var(--background);
+  box-shadow: 4px 4px 0 var(--yellowcolor);
   padding: 1.5rem;
 }
 
@@ -55,7 +55,7 @@
 
 .myBtn {
   padding: 0.5rem;
-  background-color: #a33709;
+  background-color: var(--strongblue);
   border-radius: 5px;
   border: none;
   color: #fff;

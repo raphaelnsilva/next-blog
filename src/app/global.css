@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;600;700;800;900&family=VT323&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;600;700;800;900&family=Roboto:ital,wght@0,500;0,700;0,900;1,100;1,300&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
 
 :root {
   --background: #f5fafa;
@@ -10,11 +9,11 @@
   --blackcolor: #282728;
   --whitecolor: #FFFFFF;
   --yellowcolor: #ffd977;
-
+  --yellowcolorhover: #ffc637;
 }
 
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: var(--blackcolor);
   box-sizing: border-box;
 }
@@ -79,6 +78,7 @@ img {
   border-radius: 3px;
 }
 
+
 @media (min-width: 800px) {
   .myMain {
     display: flex;
@@ -86,10 +86,11 @@ img {
     gap: 1rem;
   }
   .children {
-    flex: 7;
+    flex: 8;
   }
   .myAside {
-    flex: 3;
+    flex: 2;
     margin: 1rem 0;
   }
 }
+

@@ -40,7 +40,7 @@ export default function Contact() {
       <h1>Entre em contato com a gente.</h1>
       <form className={styles.myForm} onSubmit={handleSubmit}>
         <div className={styles.myInput}>
-          <label htmlFor='name'>Nome</label>
+          <label htmlFor='name'>Nome:</label>
           <input
             onChange={(e) => setName(e.target.value)}
             type='text'
@@ -51,7 +51,7 @@ export default function Contact() {
           />
         </div>
         <div className={styles.myInput}>
-          <label htmlFor='email'>Email</label>
+          <label htmlFor='email'>Email:</label>
           <input
             onChange={(e) => setEmail(e.target.value)}
             value={email}
@@ -62,7 +62,7 @@ export default function Contact() {
           />
         </div>
         <div className={styles.myInput}>
-          <label htmlFor='message'>Mensagem</label>
+          <label htmlFor='message'>Mensagem:</label>
           <textarea
             onChange={(e) => setMessage(e.target.value)}
             value={message}

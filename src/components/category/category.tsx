@@ -4,6 +4,7 @@ import Link from 'next/link'
 
 interface Types {
   category: string
+  id: string
 }
 
 export default async function Category() {
@@ -11,6 +12,7 @@ export default async function Category() {
     query MyQuery {
       allArticles {
         category
+        id
       }
     }
   `
@@ -25,7 +27,7 @@ export default async function Category() {
     categoriesSet.add(category)
   })
 
-  const categoriesList = Array.from(categoriesSet)
+  const categories = Array.from(categoriesSet)
 
   return (
     <ul className={styles.ul}>
@@ -33,10 +35,10 @@ export default async function Category() {
       <Link href='/'>
         <li className={styles.li}>Todas as receitas</li>
       </Link>
-      {categoriesList.map((category) => (
-        <Link key={category} href={`/category?query=${category}`}>
-          <li className={styles.li}>{category}</li>
-        </Link>
+      {categories.map((category) => (
+        <li key={category} className={styles.li}>
+          <Link href={`/category?query=${category}`}>{category}</Link>
+        </li>
       ))}
     </ul>
   )

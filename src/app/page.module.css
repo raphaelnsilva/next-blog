@@ -1,23 +1,21 @@
 .header {
-  font-weight: 300;
-  font-family: 'Frank Ruhl Libre', serif;
   border-bottom: 1px solid var(--yellowcolor);
-  padding: 0.5rem 0;
-  max-width: 400px;
-  font-size: 20px;
-  margin: 0.5rem 0;
+  max-width: 800px;
+  
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: 'Frank Ruhl Libre', serif;
 }
 
 .section {
-  margin: 1rem 0;
-  padding: 0;
-  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
 }
 
 .cardLink {
   display: flex;
   flex-direction: column;
-  margin: 1rem 0;
   box-shadow: 3px 3px 0 var(--yellowcolor);
   background-color: var(--background);
 }
@@ -26,18 +24,23 @@
   border-radius: 0;
 }
 
+.cardLink:hover {
+  box-shadow: 5px 5px 0 var(--yellowcolorhover);
+}
+
 .cardContent {
   padding: 20px;
   box-sizing: border-box;
 }
 
 .category {
-  /* padding: 0.2rem 1rem;
-  background-color: rgb(0, 156, 63); */
-  /* border-radius: 5px; */
-  font-weight: 600;
-  color: var(--browncolor);
   font-size: 14px;
+  font-weight: 600;
+
+  padding: 0.1rem 0.8rem;
+  border-radius: 5px;
+  background-color: var(--browncolor);
+  color: var(--whitecolor);
 }
 
 .cardTitle {
@@ -45,6 +48,9 @@
   font-size: 18px;
   margin: 1rem 0;
   font-family: 'Frank Ruhl Libre', serif;
+}
+.cardTitle:hover {
+  text-decoration: underline;
 }
 
 .publishData {
@@ -60,12 +66,12 @@
 }
 
 @media (min-width: 400px) {
-  .header {
-    font-size: 26px;
-  }
-
   .cardContent {
     padding: 20px;
+  }
+
+  .header {
+    font-size: 1.4rem;
   }
 }
 
@@ -79,39 +85,28 @@
   .category {
     font-size: 16px;
   }
-  
-  .section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 16px;
-  }
-
-  .cardLink {
-    margin: 0;
-  }
-
-  .cardLink:nth-child(3) {
-    grid-column: span 2;
-    display: flex;
-    flex-direction: row;
-  }
 }
 
 @media(min-width: 600px) {
   .header {
-    font-size: 36px;
+    font-size: 2rem;
   }
-
+  
   .cardContent {
     padding: 10px;
   }
-
+  
   .cardTitle {
     font-size: 18px;
   }
+
   .publishData,
   .category {
     font-size: 16px;
+  }
+
+  .section {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -142,6 +137,10 @@
   .category {
     font-size: 11px;
   }
+
+  .article {
+    flex: 7.5;
+  }
 }
 
 @media(min-width: 900px){
@@ -151,6 +150,10 @@
   .publishData,
   .category {
     font-size: 13px;
+  }
+
+  .section {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

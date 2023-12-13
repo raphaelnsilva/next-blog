@@ -38,6 +38,7 @@
 .nav li {
   font-family: 'Roboto', sans-serif;
   font-size: 0.7rem;
+  font-weight: 600;
 }
 
 .navMenu {

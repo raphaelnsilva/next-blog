@@ -7,7 +7,8 @@ import { FaRegCalendarAlt } from 'react-icons/fa'
 import { ResponsiveImageType } from 'react-datocms'
 
 export const metadata: Metadata = {
-  title: 'Início | Receitas da dona Maria'
+  title: 'Início | Mundo das receitas',
+  description: ''
 }
 
 interface Articles {
@@ -55,56 +56,42 @@ export default async function Home() {
 
   const allArticles = homepageQuery.allArticles
 
-  const CATEGORIES_QUERY = `
-    query MyQuery {
-      allArticles {
-        category
-      }
-    }
-  `
-
-  const response = await performRequest({
-    query: CATEGORIES_QUERY,
-    revalidate: 60,
-    visualEditingBaseUrl: false
-  })
-
   const categoriesSet = new Set<string>()
-  response.allArticles.forEach(({ category }: Articles) => {
+  allArticles.forEach(({ category }: Articles) => {
     categoriesSet.add(category)
   })
 
   const categoriesList = Array.from(categoriesSet)
 
   return (
-    <>
-      <h1 className={styles.header}>Últimas Receitas</h1>
-      <section className={styles.section}>
-        {allArticles.slice(0, 3).map((article: Articles) => (
-          <Link
-            className={styles.cardLink}
-            key={article.slug}
-            href={`/posts/${article.slug}`}
-          >
-            {/* eslint-disable-next-line jsx-a11y/alt-text */}
-            <Image data={article.postImage.responsiveImage} />
-            <div className={styles.cardContent}>
-              <span className={styles.category}>{article.category}</span>
-              <h1 className={styles.cardTitle}>{article.title}</h1>
-              <span className={styles.publishData}>
-                <FaRegCalendarAlt />
-                Publicado em: {article.publishDate}
-              </span>
-            </div>
-          </Link>
-        ))}
+    <article className={styles.article}>
+      <section>
+        <h1 className={styles.header}>Últimas Receitas</h1>
+        <div className={styles.section}>
+          {allArticles.slice(0, 6).map((article: Articles) => (
+            <Link
+              className={styles.cardLink}
+              key={article.slug}
+              href={`/posts/${article.slug}`}
+            >
+              {/* eslint-disable-next-line jsx-a11y/alt-text */}
+              <Image data={article.postImage.responsiveImage} />
+              <div className={styles.cardContent}>
+                <span className={styles.category}>{article.category}</span>
+                <h1 className={styles.cardTitle}>{article.title}</h1>
+                <span className={styles.publishData}>
+                  <FaRegCalendarAlt />
+                  Publicado em: {article.publishDate}
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
       </section>
       {categoriesList.map((category) => (
-        <>
-          <h1 key={category} className={styles.header}>
-            Categoria: {category}
-          </h1>
-          <section key={category} className={styles.section}>
+        <section key={category}>
+          <h1 className={styles.header}>{category}</h1>
+          <div key={category} className={styles.section}>
             {allArticles
               .slice(0, 3)
               .filter(
@@ -129,9 +116,9 @@ export default async function Home() {
                   </div>
                 </Link>
               ))}
-          </section>
-        </>
+          </div>
+        </section>
       ))}
-    </>
+    </article>
   )
 }

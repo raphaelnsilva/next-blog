@@ -2,15 +2,23 @@
 import styles from './footer.module.css'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 
 export default function Footer() {
   const pathName = usePathname()
 
   return (
     <footer className={styles.footerContainer}>
-      <p className={styles.footerParagraph}>
-        Todos os diretor reservados &copy;
-      </p>
+      <header className={styles.header}>
+        <Image src='/brand.png' alt={'brand'} width={80} height={80} />
+        <h1>
+          Mundo Da <br /> Cozinha
+        </h1>
+        <p>
+          Bem-vindo(a) ao nosso blog de receitas! Aqui, você encontrará um mundo
+          delicioso de sabores, texturas e aromas.
+        </p>
+      </header>
       <ul className={styles.navList}>
         <Link href='/'>
           <li
@@ -18,7 +26,7 @@ export default function Footer() {
               pathName === '/' ? `${styles.navLinksActive}` : styles.navLinks
             }
           >
-            Home
+            HOME
           </li>
         </Link>
         <Link href='/posts'>
@@ -29,7 +37,7 @@ export default function Footer() {
                 : styles.navLinks
             }
           >
-            Posts
+            POSTS
           </li>
         </Link>
         <Link href='/about'>
@@ -40,10 +48,13 @@ export default function Footer() {
                 : styles.navLinks
             }
           >
-            Sobre
+            SOBRE NÓS
           </li>
         </Link>
       </ul>
+      {/* <p className={styles.footerParagraph}>
+        Todos os diretor reservados &copy;
+      </p> */}
     </footer>
   )
 }

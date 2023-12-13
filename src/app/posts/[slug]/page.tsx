@@ -92,28 +92,24 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const article: Types = response.article
 
   return (
-    <>
-      <main className={styles.postContent}>
-        <article>
-          <h1 className={styles.postTitle}>{article.title}</h1>
-          <div className={styles.metaData}>
-            <span className={styles.postDate}>
-              <FaRegCalendarAlt />
-              Publicado em: {article.publishDate}
-            </span>
-            <span className={styles.postCategory}>{article.category}</span>
-          </div>
-          {/* eslint-disable-next-line jsx-a11y/alt-text */}
-          <Image data={article.postImage.responsiveImage} />
-          <StructuredText
-            data={article.content}
-            renderBlock={({ record }) => {
-              // eslint-disable-next-line jsx-a11y/alt-text
-              return <Image data={record.image.responsiveImage} />
-            }}
-          />
-        </article>
-      </main>
-    </>
+    <article className={styles.postContent}>
+      <h1 className={styles.postTitle}>{article.title}</h1>
+      <div className={styles.metaData}>
+        <span className={styles.postDate}>
+          <FaRegCalendarAlt />
+          Publicado em: {article.publishDate}
+        </span>
+        <span className={styles.postCategory}>{article.category}</span>
+      </div>
+      {/* eslint-disable-next-line jsx-a11y/alt-text */}
+      <Image data={article.postImage.responsiveImage} />
+      <StructuredText
+        data={article.content}
+        renderBlock={({ record }) => {
+          // eslint-disable-next-line jsx-a11y/alt-text
+          return <Image data={record.image.responsiveImage} />
+        }}
+      />
+    </article>
   )
 }
