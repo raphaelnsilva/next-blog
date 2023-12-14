@@ -18,6 +18,9 @@ export default function Footer() {
           Bem-vindo(a) ao nosso blog de receitas! Aqui, você encontrará um mundo
           delicioso de sabores, texturas e aromas.
         </p>
+        <p className={styles.footerParagraph}>
+          Todos os diretor reservados &copy;
+        </p>
       </header>
       <ul className={styles.navList}>
         <Link href='/'>
@@ -51,10 +54,18 @@ export default function Footer() {
             SOBRE NÓS
           </li>
         </Link>
+        <Link href='/contact'>
+          <li
+            className={
+              pathName === '/contact'
+                ? `${styles.navLinksActive}`
+                : styles.navLinks
+            }
+          >
+            CONTATOS
+          </li>
+        </Link>
       </ul>
-      {/* <p className={styles.footerParagraph}>
-        Todos os diretor reservados &copy;
-      </p> */}
     </footer>
   )
 }

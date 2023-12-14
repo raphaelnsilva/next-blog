@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 1rem;
   align-items: center;
@@ -14,12 +15,9 @@
 }
 
 .header h1 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   text-align: center;
-  font-weight: 900;
-  background: linear-gradient(to right, #282728, #696969);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+font-family: 'Playpen Sans', cursive;
 }
 
 .header img {
@@ -75,6 +73,13 @@
   }
   .header h1 {
     font-size: 1.5rem;
+  }
+}
+
+@media(min-width: 500px) {
+  .header {
+    flex-direction: row;
+    gap: 2rem;
   }
 }
 
