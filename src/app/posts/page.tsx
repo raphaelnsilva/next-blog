@@ -3,6 +3,7 @@ import { Image, ResponsiveImageType } from 'react-datocms'
 import styles from './page.module.css'
 import Link from 'next/link'
 import { FaRegCalendarAlt } from 'react-icons/fa'
+import { Metadata } from 'next'
 
 interface Articles {
   slug: string
@@ -13,6 +14,10 @@ interface Articles {
     url: string
     responsiveImage: ResponsiveImageType
   }
+}
+
+export const metadata: Metadata = {
+  title: 'Posts | Mundo da Cozinha'
 }
 
 export default async function Posts() {
