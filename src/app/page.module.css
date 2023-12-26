@@ -1,9 +1,10 @@
 .header {
-  border-bottom: 1px solid var(--yellowcolor);
+  border-bottom: 1px solid var(--strongblue);
   max-width: 800px;
   font-weight: 400;
   font-size: 1.3rem;
   font-family: 'Frank Ruhl Libre', serif;
+  margin: 2rem 0;
 }
 
 .section {

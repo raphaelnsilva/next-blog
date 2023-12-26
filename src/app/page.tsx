@@ -7,7 +7,7 @@ import { FaRegCalendarAlt } from 'react-icons/fa'
 import { ResponsiveImageType } from 'react-datocms'
 
 export const metadata: Metadata = {
-  title: 'Início | Mundo das receitas',
+  title: 'Início | Mundo Da Cozinha',
   description: ''
 }
 

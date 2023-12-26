@@ -6,6 +6,13 @@
   justify-content: center;
   gap: 10px;
 }
+.aboutContainer {
+  margin: 2rem 0;
+}
+
+.aboutContainer p {
+  margin: 18px 0;
+}
 
 .navContainer h1 {
   margin: 0;

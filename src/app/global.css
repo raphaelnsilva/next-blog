@@ -41,6 +41,13 @@ blockquote {
   background:#EDEDED;
 }
 
+ul {
+  margin: 0;
+}
+
+p {
+  margin: 10px 0;
+}
 
 blockquote::before{
   font-family:Arial;
@@ -77,6 +84,10 @@ img {
   border-radius: 3px;
 }
 
+.myAside {
+  
+  margin: 2rem 0;
+}
 
 @media (min-width: 800px) {
   .myMain {
@@ -84,12 +95,13 @@ img {
     justify-content: center;
     gap: 1rem;
   }
+
   .children {
     flex: 8;
   }
+
   .myAside {
     flex: 2;
-    margin: 1rem 0;
   }
 }
 

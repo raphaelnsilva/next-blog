@@ -17,7 +17,7 @@ interface Articles {
 }
 
 export const metadata: Metadata = {
-  title: 'Posts | Mundo da Cozinha'
+  title: 'Posts | Mundo Da Cozinha'
 }
 
 export default async function Posts() {

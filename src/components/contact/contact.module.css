@@ -6,6 +6,12 @@
   padding: 1rem 0;
 }
 
+.sectionContainer h1 {
+  margin: 1rem 0;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--strongblue);
+}
+
 .myForm {
   display: flex;
   flex-direction: column;
