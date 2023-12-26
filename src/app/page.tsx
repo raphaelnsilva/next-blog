@@ -8,7 +8,8 @@ import { ResponsiveImageType } from 'react-datocms'
 
 export const metadata: Metadata = {
   title: 'Início | Mundo Da Cozinha',
-  description: ''
+  description:
+    'Bem-vindo(a) ao nosso blog! Aqui, você encontrará um mundo delicioso de sabores, texturas e aromas'
 }
 
 interface Articles {
