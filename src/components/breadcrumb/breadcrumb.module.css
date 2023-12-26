@@ -11,8 +11,7 @@
   gap: 0.5rem;
   list-style: none;
   font-size: 0.9rem;
-  background-color: var(--background);
-  border: 1px solid var(--yellowcolor);
+  background-color: #00000008;
 }
 
 .listClasses a {

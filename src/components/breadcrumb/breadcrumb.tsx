@@ -16,7 +16,7 @@ const Breadcrumb = ({
   separator,
   capitalizeLinks
 }: TBreadCrumbProps) => {
-  const paths = usePathname().toUpperCase()
+  const paths = usePathname()
   const pathNames = paths.split('/').filter((path) => path)
   const pathNamesReplaced = pathNames.map((path) => path.replace(/-/g, ' '))
 
@@ -37,7 +37,7 @@ const Breadcrumb = ({
                 ? `${styles.listClasses} ${styles.activeClasses}`
                 : `${styles.listClasses}`
             const itemLink = capitalizeLinks
-              ? link[0].toUpperCase() + link.slice(1, link.length)
+              ? link[0] + link.slice(1, link.length)
               : link
             return (
               <React.Fragment key={index}>

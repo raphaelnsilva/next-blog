@@ -23,7 +23,6 @@ export default async function Category({
 }) {
   const category =
     typeof searchParams.query === 'string' ? searchParams.query : undefined
-  console.log(category)
 
   const CATEGORY_QUERY = `
     query MyQuery {
@@ -58,28 +57,28 @@ export default async function Category({
   const articles = response.allArticles
 
   return (
-    <section className={styles.section}>
+    <article className={styles.categoryContainer}>
       <h1 className={styles.header}>Categoria: {category}</h1>
-      <ul className={styles.lastsPosts}>
+      <section className={styles.lastsPosts}>
         {articles.map((article: Article) => (
-          <li className={styles.card} key={article.slug}>
-            <Link href={`/post/${article.slug}`}>
-              <div className={styles.cardBox}>
-                {/* eslint-disable-next-line jsx-a11y/alt-text */}
-                <Image data={article.postImage.responsiveImage} />
-                <div className={styles.cardContent}>
-                  <span className={styles.category}>{article.category}</span>
-                  <h1 className={styles.cardTitle}>{article.title}</h1>
-                  <span className={styles.publishData}>
-                    <FaRegCalendarAlt />
-                    Publicado em: {article.publishDate}
-                  </span>
-                </div>
-              </div>
-            </Link>
-          </li>
+          <Link
+            className={styles.cardLink}
+            key={article.slug}
+            href={`/posts/${article.slug}`}
+          >
+            {/* eslint-disable-next-line jsx-a11y/alt-text */}
+            <Image data={article.postImage.responsiveImage} />
+            <div className={styles.cardContent}>
+              <span className={styles.category}>{article.category}</span>
+              <h1 className={styles.cardTitle}>{article.title}</h1>
+              <span className={styles.publishData}>
+                <FaRegCalendarAlt />
+                Publicado em: {article.publishDate}
+              </span>
+            </div>
+          </Link>
         ))}
-      </ul>
-    </section>
+      </section>
+    </article>
   )
 }

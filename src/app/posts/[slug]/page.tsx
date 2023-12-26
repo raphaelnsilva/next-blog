@@ -101,8 +101,12 @@ export default async function Post({ params }: { params: { slug: string } }) {
         </span>
         <span className={styles.postCategory}>{article.category}</span>
       </div>
-      {/* eslint-disable-next-line jsx-a11y/alt-text */}
-      <Image data={article.postImage.responsiveImage} />
+      <div className={styles.postImageContainer}>
+        <div className={styles.postImage}>
+          {/* eslint-disable-next-line jsx-a11y/alt-text */}
+          <Image data={article.postImage.responsiveImage} />
+        </div>
+      </div>
       <StructuredText
         data={article.content}
         renderBlock={({ record }) => {

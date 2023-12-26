@@ -6,7 +6,7 @@
   align-items: center;
   margin: 0;
   padding: 1rem 0;
-  background-color: var(--background);
+  background-color: #03142e;
 } 
 
 .header img {
@@ -15,9 +15,10 @@
 }
 
 .header h1 {
+  color: #fff;
   font-size: 1.5rem;
   text-align: center;
-font-family: 'Playpen Sans', cursive;
+  font-family: 'Playpen Sans', cursive;
 }
 
 .header img {

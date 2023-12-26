@@ -1,17 +1,18 @@
 .footerContainer {
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  background-color: var(--background);
+  background-color: #03142E;
   border-top: 1px solid var(--yellowcolor);
-  margin: 3rem 0 0 0;
 }
 
-.header {
+.brandContainer {
   text-align: center;
-  margin: 2rem auto;
-  max-width: 300px;
+  margin: 1rem;
 }
 
-.header h1 {
+.brandContainer h1 {
+  color: var(--whitecolor);
   font-family: 'Playpen Sans', cursive;
 }
 
@@ -21,6 +22,20 @@
   text-align: center;
   margin: 0;
   padding-top: 10px;
+  color: var(--whitecolor);
+}
+
+.navContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.navContainer h1 {
+  font-family: 'Frank Ruhl Libre', serif;
+  color: var(--whitecolor);
+  text-align: center;
+  font-size: 1.6rem;
 }
 
 .navList {
@@ -33,22 +48,31 @@
   gap: 20px;
 }
 
+.navList li {
+  color: var(--whitecolor);
+}
+
 .navLinksActive {
   border-bottom: 1px solid #9f3000dd;
   color: #9f3000dd;
 }
 
-@media (min-width: 1200px) {
-  .navList {
-    width: 40%;
+@media (min-width: 800px) {
+  .footerContainer {
+    flex-direction: row;
+    justify-content: space-evenly;
+
   }
+
+  
+}
+
+@media (min-width: 1200px) {
 
   .footerContainer {
     display: flex;
     align-items: center;
   }
 
-  .navList {
-    gap: 40px;
-  }
+  
 }

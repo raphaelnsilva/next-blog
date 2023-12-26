@@ -21,7 +21,7 @@ export default async function RootLayout({
       <body suppressHydrationWarning={true}>
         <Navigation />
         <Breadcrumb
-          homeElement={'PÁGINA INICIAL'}
+          homeElement={'Home'}
           separator={<span> {'>'} </span>}
           capitalizeLinks
         />
