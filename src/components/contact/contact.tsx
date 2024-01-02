@@ -9,6 +9,11 @@ export default function Contact() {
   const [error, setError] = useState([])
   const [success, setSuccess] = useState(false)
 
+  const clearMessages = () => {
+    setError([])
+    setSuccess(false)
+  }
+
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault()
 
@@ -25,13 +30,15 @@ export default function Contact() {
     })
 
     const { msg, success } = await res.json()
-    console.log(msg)
     setError(msg)
     setSuccess(success)
     if (success) {
       setName('')
       setEmail('')
       setMessage('')
+      setTimeout(clearMessages, 5000)
+    } else {
+      setTimeout(clearMessages, 5000)
     }
   }
 
@@ -45,7 +52,7 @@ export default function Contact() {
             onChange={(e) => setName(e.target.value)}
             type='text'
             value={name}
-            placeholder='Maria'
+            placeholder='Digite seu nome...'
             autoComplete='off'
             id='name'
           />
@@ -56,7 +63,7 @@ export default function Contact() {
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             type='email'
-            placeholder='maria@gmal.com'
+            placeholder='exemplo@gmal.com'
             autoComplete='off'
             id='email'
           />
@@ -67,7 +74,7 @@ export default function Contact() {
             onChange={(e) => setMessage(e.target.value)}
             value={message}
             rows={4}
-            placeholder='Escreva sua mensagem aqui'
+            placeholder='Escreva sua mensagem aqui...'
             name='message'
           />
         </div>

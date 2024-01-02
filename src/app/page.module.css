@@ -3,7 +3,6 @@
   max-width: 800px;
   font-weight: 400;
   font-size: 1.3rem;
-  font-family: 'Frank Ruhl Libre', serif;
   margin: 2rem 0;
 }
 
@@ -47,7 +46,7 @@
   margin: 0;
   font-size: 18px;
   margin: 1rem 0;
-  font-family: 'Frank Ruhl Libre', serif;
+
 }
 .cardTitle:hover {
   text-decoration: underline;
